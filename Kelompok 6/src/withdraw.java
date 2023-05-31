@@ -1,4 +1,4 @@
-public class withdraw {
+public class Withdraw {
     /* atribut yang akan dipakai adalah string dan int
      dimana string yang akan digunakan untuk menampung note, nama, saldo 
      dan int akan digunakan untuk menampung saldoInt.
