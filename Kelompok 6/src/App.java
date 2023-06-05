@@ -67,5 +67,15 @@ public class App {
         "10.000.000",
         "1003",
         "1234567892");
+
+        Balance balanceJohn = new Balance(
+            "1001",
+            "10.000.000");
+        Balance balanceMichael = new Balance(
+            "1002",
+            "10.000.000");
+        Balance balanceDanil = new Balance(
+            "1003",
+            "10.000.000");
         }
 }
