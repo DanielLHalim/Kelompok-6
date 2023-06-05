@@ -54,4 +54,18 @@ public class App {
                 }*/
             }
         }
-    }
+    public static void init(){
+        DataNasabah john = new DataNasabah("john",
+        "10.000.000",
+        "1001",
+        "1234567890");
+        DataNasabah michael = new DataNasabah("michael",
+        "10.000.000",
+        "1002",
+        "1234567891");
+        DataNasabah danil = new DataNasabah("danil",
+        "10.000.000",
+        "1003",
+        "1234567892");
+        }
+}
