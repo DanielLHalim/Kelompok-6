@@ -51,5 +51,16 @@ public class HISTORYTRANSFER {
         public void setWaktu(String waktu) {
                 this.waktu = waktu;
         }
+
+        @Override
+        public String toString() {
+                return "{" +
+                        " noRek='" + getNoRek() + "'" +
+                        ", jenistransaksi='" + getJenistransaksi() + "'" +
+                        ", saldo='" + getSaldo() + "'" +
+                        ", tanggal='" + getTanggal() + "'" +
+                        ", waktu='" + getWaktu() + "'" +
+                        "}";
+        }
           
 }
