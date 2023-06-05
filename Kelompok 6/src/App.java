@@ -78,4 +78,24 @@ public class App {
             "1003",
             "10.000.000");
         }
-}
+
+        HISTORYTRANSFER historytransferJohn = new HISTORYTRANSFER(
+            "1001",
+            "Transfer ke 1002",
+            "Rp100.000",
+            "12 Januari 2023",
+            "19:15");
+        HISTORYTRANSFER historytransferMichael = new HISTORYTRANSFER(
+            "1002",
+            "Deposit",
+            "Rp300.000",
+            "14 Juni 2022", 
+            "16:45");
+        HISTORYTRANSFER historytransferDanil = new HISTORYTRANSFER(
+            "1003",
+            "Transfer ke 1001",
+            "Rp200.000",
+            "22 Februari 2023",
+            "13:00");      
+
+        }
