@@ -98,4 +98,17 @@ public class App {
             "22 Februari 2023",
             "13:00");      
 
+
+        Transaction transactionJohn = new Transaction(
+            "Transfer",
+            100000,
+            10000000);
+        Transaction transactionMichael = new Transaction(
+            "Transfer",
+            200000,
+            10000000);
+        Transaction transactionDanil = new Transaction(
+            "Deposit",
+            400000,
+            10000000);
         }
