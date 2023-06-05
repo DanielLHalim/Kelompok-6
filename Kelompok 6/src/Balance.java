@@ -10,6 +10,16 @@ public class Balance {
         
       */
 
+    public Balance() {
+    }
+    
+    public Balance(String noRe, String saldo) {
+      this.noRe = noRe;
+      this.saldo = saldo;
+    }
+ 
+
+  
   private String noRe;
   private String saldo;
 
@@ -28,6 +38,16 @@ public class Balance {
 
   public void setSaldo(String saldo) {
     this.saldo = saldo;
+  }
+
+  
+
+  @Override
+  public String toString() {
+    return "{" +
+      " noRe='" + getNoRe() + "'" +
+      ", saldo='" + getSaldo() + "'" +
+      "}";
   }
 
 }
