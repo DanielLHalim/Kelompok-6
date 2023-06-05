@@ -5,4 +5,4 @@ public class Deposit {
     - Setelah berhasil menyetorkan uang maka saldo didalam rekening akan bertambah dan menghasilkan informasi Penyetoran berhasil.
     - Kemudian akan muncul berapa jumlah uang yang user miliki sekarang.*/
     }
-}
+
