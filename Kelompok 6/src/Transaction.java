@@ -8,6 +8,15 @@ public class Transaction {
     private int JumlahTransaksi;
     private int Saldo;
 
+    public Transaction() {
+    }
+
+    public Transaction(String JenisTransaksi, int JumlahTransaksi, int Saldo) {
+        this.JenisTransaksi = JenisTransaksi;
+        this.JumlahTransaksi = JumlahTransaksi;
+        this.Saldo = Saldo;
+    }
+
 
     public String getJenisTransaksi() {
         return this.JenisTransaksi;
@@ -31,6 +40,15 @@ public class Transaction {
 
     public void setSaldo(int Saldo) {
         this.Saldo = Saldo;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " JenisTransaksi='" + getJenisTransaksi() + "'" +
+            ", JumlahTransaksi='" + getJumlahTransaksi() + "'" +
+            ", Saldo='" + getSaldo() + "'" +
+            "}";
     }
 
 
