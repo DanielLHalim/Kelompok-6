@@ -3,6 +3,18 @@ public class Product {
     private String totalBayar;
     private String saldo;
 
+
+    public Product() {
+    }
+
+
+    public Product(String namaProduct, String totalBayar, String saldo) {
+        this.namaProduct = namaProduct;
+        this.totalBayar = totalBayar;
+        this.saldo = saldo;
+    }
+
+
     public String getNamaProduct() {
         return this.namaProduct;
     }
@@ -26,4 +38,15 @@ public class Product {
     public void setSaldo(String saldo) {
         this.saldo = saldo;
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " namaProduct='" + getNamaProduct() + "'" +
+            ", totalBayar='" + getTotalBayar() + "'" +
+            ", saldo='" + getSaldo() + "'" +
+            "}";
+    }
+
 }
