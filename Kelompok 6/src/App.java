@@ -111,4 +111,17 @@ public class App {
             "Deposit",
             400000,
             10000000);
+
+        Product productJohn = new Product("Air",
+        "100.000",
+        "10.000.000");
+            
+        Product productMichael = new Product("Listrik",
+        "300.000",
+        "1.000.000");
+            
+        Product productDanil = new Product("Telephone",
+        "200.000",
+        "2.000.000");
+            
         }
