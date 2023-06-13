@@ -1,13 +1,15 @@
 public class Setoran{
     public String JumlahSetoran;
     public String Saldo;
+    public String IdTransaksi;
 
     public Setoran() {
     }
 
-    public Setoran(String JumlahSetoran, String Saldo) {
+    public Setoran(String JumlahSetoran, String Saldo, String IdTransaksi) {
         this.JumlahSetoran = JumlahSetoran;
         this.Saldo = Saldo;
+        this.IdTransaksi = IdTransaksi;
     }
 
 
@@ -26,12 +28,21 @@ public class Setoran{
     public void setSaldo(String Saldo) {
         this.Saldo = Saldo;
     }
+    public String getIdTransaksi() {
+        return IdTransaksi;
+    }
+    public void setIdTransaksi(String idTransaksi) {
+        IdTransaksi = idTransaksi;
+    }
 
     @Override
     public String toString() {
         return "{" +
-            ", JumlahSetoran='" + getJumlahSetoran() + "'" +
+            " JumlahSetoran='" + getJumlahSetoran() + "'" +
             ", Saldo='" + getSaldo() + "'" +
+            ", IdTransaksi='" + getIdTransaksi() + "'" +
             "}";
     }
+    
+    
 }

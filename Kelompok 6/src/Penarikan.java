@@ -1,13 +1,15 @@
 public class Penarikan{
     private String JumlahPenarikan;
-    private String Saldo;
+    private String SisaSaldo;
+    private String IdTransaksi;
 
     public Penarikan() {
     }
 
-    public Penarikan(String JumlahPenarikan, String Saldo) {
+    public Penarikan(String JumlahPenarikan, String SisaSaldo, String IdTransaksi) {
         this.JumlahPenarikan = JumlahPenarikan;
-        this.Saldo = Saldo;
+        this.SisaSaldo = SisaSaldo;
+        this.IdTransaksi = IdTransaksi;
     }
 
     public String getJumlahPenarikan() {
@@ -18,19 +20,28 @@ public class Penarikan{
         this.JumlahPenarikan = JumlahPenarikan;
     }
 
-    public String getSaldo() {
-        return this.Saldo;
+    public String getSisaSaldo() {
+        return this.SisaSaldo;
     }
 
-    public void setSaldo(String Saldo) {
-        this.Saldo = Saldo;
+    public void setSisaSaldo(String SisaSaldo) {
+        this.SisaSaldo = SisaSaldo;
+    }
+    public void setIdTransaksi(String idTransaksi) {
+        IdTransaksi = idTransaksi;
+    }
+    public String getIdTransaksi() {
+        return IdTransaksi;
     }
 
     @Override
     public String toString() {
         return "{" +
             " JumlahPenarikan='" + getJumlahPenarikan() + "'" +
-            ", Saldo='" + getSaldo() + "'" +
+            ", Saldo='" + getSisaSaldo() + "'" +
+            ", IdTransaksi='" + getIdTransaksi() + "'" +
             "}";
     }
+    
+    
 }
