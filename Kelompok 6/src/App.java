@@ -124,4 +124,15 @@ public class App {
         "200.000",
         "2.000.000");
         
+        Penarikan penarikanJohn = new Penarikan (
+        "100.000",
+        "10.000.000");
+            
+        Penarikan penarikanMichael = new Penarikan(
+        "300.000",
+        "1.000.000");
+            
+        Penarikan penarikanDanil = new Penarikan(
+        "200.000",
+        "2.000.000");
         }
