@@ -109,16 +109,19 @@ public class App {
             400000,
             10000000);
 
-        Setoran setoranJohn = new Setoran ("Air",
+        Setoran setoranJohn = new Setoran (
+        "Uang",
         "100.000",
         "10.000.000");
             
-        Setoran setoranMichael = new Setoran("Listrik",
+        Setoran setoranMichael = new Setoran(
+        "Listrik",
         "300.000",
         "1.000.000");
             
-        Setoran setoranDanil = new Setoran("Telephone",
+        Setoran setoranDanil = new Setoran(
+        "Telephone",
         "200.000",
         "2.000.000");
-            
+        
         }

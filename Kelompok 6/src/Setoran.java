@@ -1,23 +1,23 @@
 public class Setoran{
-    public String JenisTransaksi;
+    public String JenisSetoran;
     public String JumlahSetoran;
     public String Saldo;
 
     public Setoran() {
     }
 
-    public Setoran(String JenisTransaksi, String JumlahSetoran, String Saldo) {
-        this.JenisTransaksi = JenisTransaksi;
+    public Setoran(String JenisSetoran, String JumlahSetoran, String Saldo) {
+        this.JenisSetoran = JenisSetoran;
         this.JumlahSetoran = JumlahSetoran;
         this.Saldo = Saldo;
     }
 
-    public String getJenisTransaksi() {
-        return this.JenisTransaksi;
+    public String getJenisSetoran() {
+        return this.JenisSetoran;
     }
 
-    public void setJenisTransaksi(String JenisTransaksi) {
-        this.JenisTransaksi = JenisTransaksi;
+    public void setJenisSetoran(String JenisSetoran) {
+        this.JenisSetoran = JenisSetoran;
     }
 
     public String getJumlahSetoran() {
@@ -39,7 +39,7 @@ public class Setoran{
     @Override
     public String toString() {
         return "{" +
-            " JenisTransaksi='" + getJenisTransaksi() + "'" +
+            " JenisTransaksi='" + getJenisSetoran() + "'" +
             ", JumlahSetoran='" + getJumlahSetoran() + "'" +
             ", Saldo='" + getSaldo() + "'" +
             "}";
