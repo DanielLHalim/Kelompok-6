@@ -1,13 +1,13 @@
-public class Balance {
+public class Saldo {
   private String nomorRekening;
   private String saldo;
   private String idTransaksi;
 
 
-  public Balance() {
+  public Saldo() {
   }
 
-  public Balance(String nomorRekening, String saldo, String idTransaksi) {
+  public Saldo(String nomorRekening, String saldo, String idTransaksi) {
     this.nomorRekening = nomorRekening;
     this.saldo = saldo;
     this.idTransaksi = idTransaksi;

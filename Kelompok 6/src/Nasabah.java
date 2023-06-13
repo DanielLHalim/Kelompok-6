@@ -1,14 +1,14 @@
-public class DataNasabah {
+public class Nasabah {
    
     private String Nama;
     private String Saldo;
     private String NoRek;
     private String Nik;
 
-    public DataNasabah() {
+    public Nasabah() {
     }
 
-    public DataNasabah(String Nama, String Saldo, String NoRek, String Nik) {
+    public Nasabah(String Nama, String Saldo, String NoRek, String Nik) {
         this.Nama = Nama;
         this.Saldo = Saldo;
         this.NoRek = NoRek;

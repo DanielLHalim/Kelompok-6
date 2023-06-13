@@ -65,13 +65,13 @@ public class App {
         "1003",
         "danil");
 
-        Balance balanceJohn = new Balance(
+        Saldo saldoJohn = new Saldo(
             "1001",
             "10.000.000");
-        Balance balanceMichael = new Balance(
+        Saldo saldoMichael = new Saldo(
             "1002",
             "10.000.000");
-        Balance balanceDanil = new Balance(
+        Saldo saldoDanil = new Saldo(
             "1003",
             "10.000.000");
         }
