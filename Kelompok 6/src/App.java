@@ -9,7 +9,6 @@ public class App {
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
         return timeStamp;
     }
-
     public static void main(String[] args) {
             boolean end = false;
             while (!end) {
@@ -65,16 +64,15 @@ public class App {
         "1003",
         "danil");
 
-        Saldo saldoJohn = new Saldo(
-            "1001",
-            "10.000.000");
-        Saldo saldoMichael = new Saldo(
-            "1002",
-            "10.000.000");
-        Saldo saldoDanil = new Saldo(
-            "1003",
-            "10.000.000");
-        }
+        Saldo saldoJohn = new Saldo("1001",
+        "10000000",
+        "SDO1001");
+        Saldo saldoMichael = new Saldo("1002",
+        "10000000",
+        "SDO1002");
+        Saldo saldoDanil = new Saldo("1003",
+        "10000000",
+        "SDO1003");
 
         HISTORYTRANSFER historytransferJohn = new HISTORYTRANSFER(
             "1001",
@@ -109,27 +107,16 @@ public class App {
             400000,
             10000000);
 
-        Setoran setoranJohn = new Setoran (
+        Setoran setoranJohn = new Setoran ("Air",
         "100.000",
         "10.000.000");
             
-        Setoran setoranMichael = new Setoran(
+        Setoran setoranMichael = new Setoran("Listrik",
         "300.000",
         "1.000.000");
             
-        Setoran setoranDanil = new Setoran(
+        Setoran setoranDanil = new Setoran("Telephone",
         "200.000",
         "2.000.000");
-        
-        Penarikan penarikanJohn = new Penarikan (
-        "100.000",
-        "10.000.000");
             
-        Penarikan penarikanMichael = new Penarikan(
-        "300.000",
-        "1.000.000");
-            
-        Penarikan penarikanDanil = new Penarikan(
-        "200.000",
-        "2.000.000");
         }
