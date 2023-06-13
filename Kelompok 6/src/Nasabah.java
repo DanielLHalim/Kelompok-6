@@ -7,14 +7,7 @@ public class Nasabah {
     public Nasabah() {
     }
 
-<<<<<<< Updated upstream
-    public Nasabah(String Nama, String Saldo, String NoRek, String Nik) {
-        this.Nama = Nama;
-        this.Saldo = Saldo;
-        this.NoRek = NoRek;
-=======
     public Nasabah(String Nik, String NomorRekening, String Nama) {
->>>>>>> Stashed changes
         this.Nik = Nik;
         this.NomorRekening = NomorRekening;
         this.Nama = Nama;
