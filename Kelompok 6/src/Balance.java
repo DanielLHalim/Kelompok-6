@@ -1,35 +1,24 @@
 public class Balance {
-   /* john michael chenardy 03081220008 */
-    /*  - Didalam check balance terdapat Fungsi getBalance yang Merupakan fungsi yang berguna untuk tidak mengembalikan nilai /void.
-            terdapat  dua parameter, yaitu :
-            noTelp yang merupakan nomor telepon yang akan dicari saldo-nya.
-        data yang merupakan list data no telepon user yang akan didekomposisi.
-        - Kerja Fungsi ini menampilkan saldo user dengan cara mengambil data nomor telepon user yang disimpan didalam server.
-        - fungsi ini juga menampilkan output berupa no telephon user, nama user dan saldo dari akun tersebut.
-        - dalam balance terdapat atribut berupa int, string dan system out
-        
-      */
-
-    public Balance() {
-    }
-    
-    public Balance(String noRe, String saldo) {
-      this.noRe = noRe;
-      this.saldo = saldo;
-    }
- 
-
-  
-  private String noRe;
+  private String nomorRekening;
   private String saldo;
+  private String idTransaksi;
 
 
-  public String getNoRe() {
-    return this.noRe;
+  public Balance() {
   }
 
-  public void setNoRe(String noRe) {
-    this.noRe = noRe;
+  public Balance(String nomorRekening, String saldo, String idTransaksi) {
+    this.nomorRekening = nomorRekening;
+    this.saldo = saldo;
+    this.idTransaksi = idTransaksi;
+  }
+
+  public String getNomorRekening() {
+    return this.nomorRekening;
+  }
+
+  public void setNomorRekening(String nomorRekening) {
+    this.nomorRekening = nomorRekening;
   }
 
   public String getSaldo() {
@@ -40,14 +29,22 @@ public class Balance {
     this.saldo = saldo;
   }
 
-  
+  public String getIdTransaksi() {
+    return this.idTransaksi;
+  }
+
+  public void setIdTransaksi(String idTransaksi) {
+    this.idTransaksi = idTransaksi;
+  }
+
 
   @Override
   public String toString() {
     return "{" +
-      " noRe='" + getNoRe() + "'" +
+      " nomorRekening='" + getNomorRekening() + "'" +
       ", saldo='" + getSaldo() + "'" +
+      ", idTransaksi='" + getIdTransaksi() + "'" +
       "}";
   }
-
+  
 }
