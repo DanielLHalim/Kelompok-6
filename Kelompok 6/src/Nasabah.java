@@ -1,43 +1,23 @@
 public class Nasabah {
    
-    private String Nama;
-    private String Saldo;
-    private String NoRek;
     private String Nik;
+    private String NomorRekening;
+    private String Nama;
 
     public Nasabah() {
     }
 
+<<<<<<< Updated upstream
     public Nasabah(String Nama, String Saldo, String NoRek, String Nik) {
         this.Nama = Nama;
         this.Saldo = Saldo;
         this.NoRek = NoRek;
+=======
+    public Nasabah(String Nik, String NomorRekening, String Nama) {
+>>>>>>> Stashed changes
         this.Nik = Nik;
-    }
-   
-
-    public String getNama() {
-        return this.Nama;
-    }
-
-    public void setNama(String Nama) {
+        this.NomorRekening = NomorRekening;
         this.Nama = Nama;
-    }
-
-    public String getSaldo() {
-        return this.Saldo;
-    }
-
-    public void setSaldo(String Saldo) {
-        this.Saldo = Saldo;
-    }
-
-    public String getNoRek() {
-        return this.NoRek;
-    }
-
-    public void setNoRek(String NoRek) {
-        this.NoRek = NoRek;
     }
 
     public String getNik() {
@@ -48,13 +28,34 @@ public class Nasabah {
         this.Nik = Nik;
     }
 
+    public String getNomorRekening() {
+        return this.NomorRekening;
+    }
+
+    public void setNomorRekening(String NomorRekening) {
+        this.NomorRekening = NomorRekening;
+    }
+
+    public String getNama() {
+        return this.Nama;
+    }
+
+    public void setNama(String Nama) {
+        this.Nama = Nama;
+    }
+
     @Override
     public String toString() {
         return "{" +
-            " Nama='" + getNama() + "'" +
-            ", Saldo='" + getSaldo() + "'" +
-            ", NoRek='" + getNoRek() + "'" +
-            ", Nik='" + getNik() + "'" +
+            " Nik='" + getNik() + "'" +
+            ", NomorRekening='" + getNomorRekening() + "'" +
+            ", Nama='" + getNama() + "'" +
             "}";
     }
+
+
+    
+
+    
+
 }
