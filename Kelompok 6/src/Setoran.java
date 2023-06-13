@@ -39,7 +39,7 @@ public class Setoran{
     @Override
     public String toString() {
         return "{" +
-            " JenisTransaksi='" + getJenisSetoran() + "'" +
+            " JenisSetoran='" + getJenisSetoran() + "'" +
             ", JumlahSetoran='" + getJumlahSetoran() + "'" +
             ", Saldo='" + getSaldo() + "'" +
             "}";
