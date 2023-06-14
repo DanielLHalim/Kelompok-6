@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Scanner;
 
 public class App {
     static Scanner input = new Scanner(System.in);
@@ -10,19 +11,19 @@ public class App {
         return timeStamp;
     }
     public static void main(String[] args) throws Exception{
-            // boolean end = false;
-            // while (!end) {
-            //     //try {
-            //         System.out.println("\nMenu Utama:");
-            //         System.out.println("1. Check Balance");
-            //         System.out.println("2. Withdraw");
-            //         System.out.println("3. Deposit");
-            //         System.out.println("4. Pinjaman");
-            //         System.out.println("5. Transaction History");
-            //         System.out.println("6. Info Nasabah");
+            boolean end = false;
+            while (!end) {
+                //try {
+                    System.out.println("\nMenu Utama:");
+                    System.out.println("1. Check Balance");
+                    System.out.println("2. Withdraw");
+                    System.out.println("3. Deposit");
+                    System.out.println("4. Pinjaman");
+                    System.out.println("5. Transaction History");
+                    System.out.println("6. Info Nasabah");
 
-            //         System.out.println("\nMasukkan pilihan: ");
-            //         int selectedMenu = input.nextInt();
+                    System.out.println("\nMasukkan pilihan: ");
+                     int selectedMenu = input.nextInt();
 
                     /*switch (selectedMenu) {
                         case 1:
@@ -54,6 +55,8 @@ public class App {
             
         
         init ();
+        switch(selectedMenu){
+            case 6:
         System.out.println("Nasabah :");
         Nasabah John = new Nasabah();
         John = new Nasabah(
@@ -75,8 +78,8 @@ public class App {
         "1234567892",
         "1003");
         System.out.println(Danil);
-        
-
+        break;
+            case 1:
         System.out.println(); 
         System.out.println("Saldo :");
         Saldo saldoJohn = new Saldo();
@@ -99,8 +102,8 @@ public class App {
         "2.000.000",
         "SDO1003");
         System.out.println(saldoDanil);
-        
-
+        break;
+            case 5:
         System.out.println(); 
         System.out.println("Histori Transaksi :");
         HistoriTransaksi historitransaksiJohn = new HistoriTransaksi();
@@ -129,8 +132,8 @@ public class App {
         "200.000",
         "22 Februari 2023 Jam 13:00");
         System.out.println(historitransaksiDanil);
-
-
+        break;
+            case 4:
         System.out.println(); 
         System.out.println("Pinjaman :");
         Pinjaman pinjamanJohn = new Pinjaman();
@@ -153,8 +156,8 @@ public class App {
         "10.000.000",
         "PIN1003");
         System.out.println(pinjamanDanil);
-
-
+        break;
+            case 3:
         System.out.println(); 
         System.out.println("Setoran :");
         Setoran setoranJohn = new Setoran ();
@@ -177,8 +180,8 @@ public class App {
         "2.200.000",
         "CR1003");
         System.out.println(setoranDanil);
-        
-
+        break;
+            case 2:
         System.out.println(); 
         System.out.println("Penarikan :");
         Penarikan penarikanJohn = new Penarikan ();
@@ -201,8 +204,8 @@ public class App {
         "1.800.000",
         "DB1003");
         System.out.println(penarikanDanil);
-
-
+        }
+    }
 
     }
     public static void init(){
