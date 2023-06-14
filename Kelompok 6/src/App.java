@@ -107,15 +107,18 @@ public class App {
 
         Pinjaman pinjamanJohn = new Pinjaman(
         "John",
-        "500.000.000");
+        "500.000.000",
+        "PIN1001");
 
         Pinjaman pinjamanMichael = new Pinjaman(
         "Micahel",
-        "100.000.000");
+        "100.000.000",
+        "PIN1002");
 
         Pinjaman pinjamanDanil = new Pinjaman(
         "Danil",
-        "10.000.000");
+        "10.000.000",
+        "PIN1003");
 
 
         Setoran setoranJohn = new Setoran (

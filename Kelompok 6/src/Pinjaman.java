@@ -1,13 +1,15 @@
 public class Pinjaman {
     private String Nasabah;
     private String JumlahPinjaman;
+    private String IdTransaksi;
 
     public Pinjaman() {
     }
 
-    public Pinjaman(String Nasabah, String JumlahPinjaman) {
+    public Pinjaman(String Nasabah, String JumlahPinjaman, String IdTransaksi) {
         this.Nasabah = Nasabah;
         this.JumlahPinjaman = JumlahPinjaman;
+        this.IdTransaksi = IdTransaksi;
     }
 
     public String getNasabah() {
@@ -25,6 +27,12 @@ public class Pinjaman {
     public void setJumlahPinjaman(String JumlahPinjaman) {
         this.JumlahPinjaman = JumlahPinjaman;
     }
+    public void setIdTransaksi(String idTransaksi) {
+        IdTransaksi = idTransaksi;
+    }
+    public String getIdTransaksi() {
+        return IdTransaksi;
+    }
 
 
     @Override
@@ -32,8 +40,9 @@ public class Pinjaman {
         return "{" +
             " Nasabah='" + getNasabah() + "'" +
             ", JumlahPinjaman='" + getJumlahPinjaman() + "'" +
+            ", IdTransaksi='" + getIdTransaksi() + "'" +
             "}";
     }
-
+    
 
 }
