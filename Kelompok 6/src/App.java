@@ -17,9 +17,9 @@ public class App {
                     System.out.println("1. Check Balance");
                     System.out.println("2. Withdraw");
                     System.out.println("3. Deposit");
-                    System.out.println("4. Pinjaman");
+                    System.out.println("4. Transfer");
                     System.out.println("5. Transaction History");
-                    System.out.println("6. Info Nasabah");
+                    System.out.println("6. Logout");
 
                     System.out.println("\nMasukkan pilihan: ");
                     int selectedMenu = input.nextInt();
@@ -57,37 +57,68 @@ public class App {
         Nasabah John = new Nasabah("1234567890",
         "1001",
         "john");
+<<<<<<< HEAD
 
         Nasabah Michael = new Nasabah("1234567891",
         "1002",
         "michael");
 
         Nasabah Danil = new Nasabah("1234567892",
+=======
+        Nasabah michael = new Nasabah("1234567891",
+        "1002",
+        "michael");
+        Nasabah danil = new Nasabah("1234567892",
+>>>>>>> parent of c3fb00f (perubahan)
         "1003",
         "danil");
 
-
-        Saldo saldoJohn = new Saldo(
-        "1001",
-        "10.000.000",
+        Saldo saldoJohn = new Saldo("1001",
+        "10000000",
         "SDO1001");
-
-        Saldo saldoMichael = new Saldo(
-        "1002",
-        "10.000.000",
+        Saldo saldoMichael = new Saldo("1002",
+        "10000000",
         "SDO1002");
-
-        Saldo saldoDanil = new Saldo(
-        "1003",
-        "10.000.000",
+        Saldo saldoDanil = new Saldo("1003",
+        "10000000",
         "SDO1003");
 
+        HISTORYTRANSFER historytransferJohn = new HISTORYTRANSFER(
+            "1001",
+            "Transfer ke 1002",
+            "Rp100.000",
+            "12 Januari 2023",
+            "19:15");
+        HISTORYTRANSFER historytransferMichael = new HISTORYTRANSFER(
+            "1002",
+            "Deposit",
+            "Rp300.000",
+            "14 Juni 2022", 
+            "16:45");
+        HISTORYTRANSFER historytransferDanil = new HISTORYTRANSFER(
+            "1003",
+            "Transfer ke 1001",
+            "Rp200.000",
+            "22 Februari 2023",
+            "13:00");      
 
-        HistoriTransaksi historitransaksiJohn = new HistoriTransaksi(
-        "Debit",
-        "DB1001",
-        "1001",
+
+        Transaction transactionJohn = new Transaction(
+            "Transfer",
+            100000,
+            10000000);
+        Transaction transactionMichael = new Transaction(
+            "Transfer",
+            200000,
+            10000000);
+        Transaction transactionDanil = new Transaction(
+            "Deposit",
+            400000,
+            10000000);
+
+        Setoran setoranJohn = new Setoran ("Air",
         "100.000",
+<<<<<<< HEAD
         "12 Januari 2023 Jam 19:15");
 
         HistoriTransaksi historitransaksiMichael = new HistoriTransaksi(
@@ -125,31 +156,17 @@ public class App {
         "100.000",
         "10.100.000",
         "CR1001");
+=======
+        "10.000.000");
+>>>>>>> parent of c3fb00f (perubahan)
             
-        Setoran setoranMichael = new Setoran(
+        Setoran setoranMichael = new Setoran("Listrik",
         "300.000",
-        "1.300.000",
-        "CR1002");
+        "1.000.000");
             
-        Setoran setoranDanil = new Setoran(
+        Setoran setoranDanil = new Setoran("Telephone",
         "200.000",
-        "2.200.000",
-        "CR1003");
+        "2.000.000");
+            
         
-
-        Penarikan penarikanJohn = new Penarikan (
-        "100.000",
-        "9.900.000",
-        "DB1001");
-        
-        Penarikan penarikanMichael = new Penarikan(
-        "300.000",
-        "700.000",
-        "DB1002");
-
-        Penarikan penarikanDanil = new Penarikan(
-        "200.000",
-        "2.000.000",
-        "DB1003");
         }
-    }

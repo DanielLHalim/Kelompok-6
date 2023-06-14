@@ -3,17 +3,15 @@ public class HistoriTransaksi {
     public String IdTransaksi;
     public String NomorRekening;
     public String Saldo;
-    public String DateTime;
 
     public HistoriTransaksi() {
     }
 
-    public HistoriTransaksi(String JenisTransaksi, String IdTransaksi, String NoRek, String Saldo, String DateTime) {
+    public HistoriTransaksi(String JenisTransaksi, String IdTransaksi, String NoRek, String Saldo) {
         this.JenisTransaksi = JenisTransaksi;
         this.IdTransaksi = IdTransaksi;
         this.NomorRekening = NomorRekening;
         this.Saldo = Saldo;
-        this.DateTime = DateTime;
     }
 
     public String getJenisTransaksi() {
@@ -47,13 +45,6 @@ public class HistoriTransaksi {
     public void setSaldo(String Saldo) {
         this.Saldo = Saldo;
     }
-    public String getDateTime() {
-        return DateTime;
-    }
-    public void setDateTime(String dateTime) {
-        DateTime = dateTime;
-    }
-
 
     @Override
     public String toString() {
@@ -62,8 +53,7 @@ public class HistoriTransaksi {
             ", IdTransaksi='" + getIdTransaksi() + "'" +
             ", NomorRekening='" + getNomorRekening() + "'" +
             ", Saldo='" + getSaldo() + "'" +
-            ", DateTime='" + getDateTime() + "'" +
             "}";
     }
-    
+
 }
