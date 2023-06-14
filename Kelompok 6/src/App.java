@@ -54,15 +54,15 @@ public class App {
             }
         }
     public static void init(){
-        Nasabah john = new Nasabah("1234567890",
+        Nasabah John = new Nasabah("1234567890",
         "1001",
         "john");
 
-        Nasabah michael = new Nasabah("1234567891",
+        Nasabah Michael = new Nasabah("1234567891",
         "1002",
         "michael");
 
-        Nasabah danil = new Nasabah("1234567892",
+        Nasabah Danil = new Nasabah("1234567892",
         "1003",
         "danil");
 
@@ -105,15 +105,15 @@ public class App {
         "22 Februari 2023 Jam 13:00");      
 
 
-        Pinjaman pinjamanjohn = new Pinjaman(
+        Pinjaman pinjamanJohn = new Pinjaman(
         "John",
         "500.000.000");
 
-        Pinjaman pinjamanmichael = new Pinjaman(
+        Pinjaman pinjamanMichael = new Pinjaman(
         "Micahel",
         "100.000.000");
 
-        Pinjaman pinjamandanil = new Pinjaman(
+        Pinjaman pinjamanDanil = new Pinjaman(
         "Danil",
         "10.000.000");
 
