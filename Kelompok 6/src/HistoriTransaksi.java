@@ -4,7 +4,6 @@ public class HistoriTransaksi {
     public String NomorRekening;
     public String Saldo;
     public String DateTime;
-
     public HistoriTransaksi() {
     }
 
@@ -15,35 +14,27 @@ public class HistoriTransaksi {
         this.Saldo = Saldo;
         this.DateTime = DateTime;
     }
-
     public String getJenisTransaksi() {
         return this.JenisTransaksi;
     }
-
     public void setJenisTransaksi(String JenisTransaksi) {
         this.JenisTransaksi = JenisTransaksi;
     }
-
     public String getIdTransaksi() {
         return this.IdTransaksi;
     }
-
     public void setIdTransaksi(String IdTransaksi) {
         this.IdTransaksi = IdTransaksi;
     }
-
     public String getNomorRekening() {
         return this.NomorRekening;
     }
-
     public void setNomorRekening(String NomorRekening) {
         this.NomorRekening = NomorRekening;
     }
-
     public String getSaldo() {
         return this.Saldo;
     }
-
     public void setSaldo(String Saldo) {
         this.Saldo = Saldo;
     }
@@ -53,8 +44,6 @@ public class HistoriTransaksi {
     public void setDateTime(String dateTime) {
         DateTime = dateTime;
     }
-
-
     @Override
     public String toString() {
         return "{" +
