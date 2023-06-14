@@ -8,7 +8,7 @@ public class HistoriTransaksi {
     public HistoriTransaksi() {
     }
 
-    public HistoriTransaksi(String JenisTransaksi, String IdTransaksi, String NoRek, String Saldo, String DateTime) {
+    public HistoriTransaksi(String JenisTransaksi, String IdTransaksi, String NomorRekening, String Saldo, String DateTime) {
         this.JenisTransaksi = JenisTransaksi;
         this.IdTransaksi = IdTransaksi;
         this.NomorRekening = NomorRekening;

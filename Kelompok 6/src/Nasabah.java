@@ -1,49 +1,41 @@
 public class Nasabah {
    
+    private String Nama;
     private String Nik;
     private String NomorRekening;
-    private String Nama;
 
     public Nasabah() {
     }
 
-    public Nasabah(String Nik, String NomorRekening, String Nama) {
+    public Nasabah(String Nama, String Nik, String NomorRekening) {
         this.Nik = Nik;
         this.NomorRekening = NomorRekening;
         this.Nama = Nama;
     }
 
-    public String getNik() {
-        return this.Nik;
-    }
-
-    public void setNik(String Nik) {
-        this.Nik = Nik;
-    }
-
-    public String getNomorRekening() {
-        return this.NomorRekening;
-    }
-
-    public void setNomorRekening(String NomorRekening) {
-        this.NomorRekening = NomorRekening;
-    }
-
-    public String getNama() {
-        return this.Nama;
-    }
-
-    public void setNama(String Nama) {
-        this.Nama = Nama;
+    public void setNama(String nama) {
+        Nama = nama;
+    }public String getNama() {
+        return Nama;
+    }public void setNik(String nik) {
+        Nik = nik;
+    }public String getNik() {
+        return Nik;
+    }public void setNomorRekening(String nomorRekening) {
+        NomorRekening = nomorRekening;
+    }public String getNomorRekening() {
+        return NomorRekening;
     }
 
     @Override
     public String toString() {
         return "{" +
-            " Nik='" + getNik() + "'" +
+            " Nama='" + getNama() + "'" +
+            ", Nik='" + getNik() + "'" +
             ", NomorRekening='" + getNomorRekening() + "'" +
-            ", Nama='" + getNama() + "'" +
             "}";
+    
+    
     }
 
 
