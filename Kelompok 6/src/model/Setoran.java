@@ -1,5 +1,4 @@
 package model;
-
 class Setoran extends Transaksi {
 
     public Setoran(String Nominal, String UpdateSaldo, String IdTransaksi) {

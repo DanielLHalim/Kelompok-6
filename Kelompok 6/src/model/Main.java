@@ -1,6 +1,4 @@
 package model;
-import model.Setoran;
-import model.Penarikan;
 import model.Transaksi;
 
 public class Main {
