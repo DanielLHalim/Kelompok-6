@@ -1,6 +1,8 @@
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Scanner;
+import model.Transaksi;
+
 
 public class App {
     static Scanner input = new Scanner(System.in);
@@ -159,27 +161,27 @@ public class App {
         break;
             case 3:
         System.out.println(); 
-        System.out.println("Setoran :");
-        Setoran setoranJohn = new Setoran ();
-        setoranJohn = new Setoran(
+        System.out.println("Transaksi :");
+        Transaksi TransaksiJohn = new Transaksi ();
+        TransaksiJohn = new Transaksi(
         "100.000",
         "10.100.000",
         "CR1001");
-        System.out.println(setoranJohn);
+        System.out.println(TransaksiJohn);
             
-        Setoran setoranMichael = new Setoran();
-        setoranMichael = new Setoran(
+        Transaksi TransaksiMichael = new Transaksi();
+        TransaksiMichael = new Transaksi(
         "300.000",
         "1.300.000",
         "CR1002");
-        System.out.println(setoranMichael);
+        System.out.println(TransaksiMichael);
             
-        Setoran setoranDanil = new Setoran();
-        setoranDanil = new Setoran(
+        Transaksi TransaksiDanil = new Transaksi();
+        TransaksiDanil = new Transaksi(
         "200.000",
         "2.200.000",
         "CR1003");
-        System.out.println(setoranDanil);
+        System.out.println(TransaksiDanil);
         break;
             case 2:
         System.out.println(); 
@@ -276,17 +278,17 @@ public class App {
         "PIN1003");
 
 
-        Setoran setoranJohn = new Setoran (
+        Transaksi TransaksiJohn = new Transaksi (
         "100.000",
         "10.100.000",
         "CR1001");
             
-        Setoran setoranMichael = new Setoran(
+        Transaksi TransaksiMichael = new Transaksi(
         "300.000",
         "1.300.000",
         "CR1002");
             
-        Setoran setoranDanil = new Setoran(
+        Transaksi TransaksiDanil = new Transaksi(
         "200.000",
         "2.200.000",
         "CR1003");

@@ -1,32 +1,16 @@
 public class Nasabah {
    
-    private String Nik;
-    private String NomorRekening;
     private String Nama;
+    private String NomorRekening;
+    private String Nik;
 
     public Nasabah() {
     }
 
-    public Nasabah(String Nik, String NomorRekening, String Nama) {
-        this.Nik = Nik;
-        this.NomorRekening = NomorRekening;
+    public Nasabah(String Nama, String NomorRekening, String Nik) {
         this.Nama = Nama;
-    }
-
-    public String getNik() {
-        return this.Nik;
-    }
-
-    public void setNik(String Nik) {
-        this.Nik = Nik;
-    }
-
-    public String getNomorRekening() {
-        return this.NomorRekening;
-    }
-
-    public void setNomorRekening(String NomorRekening) {
         this.NomorRekening = NomorRekening;
+        this.Nik = Nik;
     }
 
     public String getNama() {
@@ -37,14 +21,34 @@ public class Nasabah {
         this.Nama = Nama;
     }
 
+    public String getNomorRekening() {
+        return this.NomorRekening;
+    }
+
+    public void setNomorRekening(String NomorRekening) {
+        this.NomorRekening = NomorRekening;
+    }
+
+
+    public String getNik() {
+        return this.Nik;
+    }
+
+    public void setNik(String Nik) {
+        this.Nik = Nik;
+    }
+
+
+
     @Override
     public String toString() {
         return "{" +
-            " Nik='" + getNik() + "'" +
+            " Nama='" + getNama() + "'" +
             ", NomorRekening='" + getNomorRekening() + "'" +
-            ", Nama='" + getNama() + "'" +
+            ", Nik='" + getNik() + "'" +
             "}";
     }
+    
 
 
     
