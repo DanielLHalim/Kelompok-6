@@ -15,16 +15,29 @@ import java.util.InputMismatchException;
         return timeStamp;
     }
 
+// public static void main(String[] args) throws Exception {
+//     Transaksi[] Transaksi = { new Setoran(null, null, null) };
+//       for (Transaksi Transaksi2 : Transaksi) {
+//       Transaksi2.deposit();
+//       }
+//       Setoran deposit = new Setoran(null, null, null);
+//       deposit.getUpdateSaldo();
+//       deposit.setoran();
+//       Transaksi[2].deposit();
+      
+//       Penarikan penarikan = new Penarikan(null, null, null);
+      
+    
 public static void main(String[] args) throws Exception {
     boolean end = false;
     while (!end) {
         try {
             System.out.println("\nMenu Utama:");
-            System.out.println("1. Check Balance");
-            System.out.println("2. Withdraw");
-            System.out.println("3. Deposit");
+            System.out.println("1. Cek Saldo");
+            System.out.println("2. Penarikan");
+            System.out.println("3. Setoran");
             System.out.println("4. Pinjaman");
-            System.out.println("5. Transaction History");
+            System.out.println("5. Histori Transaksi");
             System.out.println("6. Info Nasabah");
 
             System.out.println("\nMasukkan pilihan: ");
@@ -43,6 +56,7 @@ public static void main(String[] args) throws Exception {
                     Saldo saldoDanil = new Saldo("1003", "2.000.000", "SDO1003");
                     System.out.println(saldoDanil);
                     break;
+
                 case 2:
                     System.out.println();
                     System.out.println("Penarikan :");
@@ -55,6 +69,7 @@ public static void main(String[] args) throws Exception {
                     Penarikan penarikanDanil = new Penarikan("200.000", "1.800.000", "DB1003");
                     System.out.println(penarikanDanil);
                     break;
+
                 case 3:
                     System.out.println();
                     System.out.println("Transaksi :");
@@ -67,6 +82,7 @@ public static void main(String[] args) throws Exception {
                     Setoran setoranDanil = new Setoran("200.000", "2.200.000", "CR1003");
                     System.out.println(setoranDanil);
                     break;
+
                 case 4:
                     System.out.println();
                     System.out.println("Pinjaman :");
@@ -79,6 +95,7 @@ public static void main(String[] args) throws Exception {
                     Pinjaman pinjamanDanil = new Pinjaman("Danil", "10.000.000", "PIN1003");
                     System.out.println(pinjamanDanil);
                     break;
+
                 case 5:
                     System.out.println();
                     System.out.println("Histori Transaksi :");
@@ -94,6 +111,7 @@ public static void main(String[] args) throws Exception {
                             "22 Februari 2023 Jam 13:00");
                     System.out.println(historiTransaksiDanil);
                     break;
+                    
                 case 6:
                     System.out.println();
                     System.out.println("Nasabah :");

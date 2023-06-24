@@ -1,5 +1,5 @@
 package model;
-class Setoran extends Transaksi {
+public class Setoran extends Transaksi {
 
     public Setoran(String Nominal, String UpdateSaldo, String IdTransaksi) {
         super(Nominal, UpdateSaldo, IdTransaksi);
