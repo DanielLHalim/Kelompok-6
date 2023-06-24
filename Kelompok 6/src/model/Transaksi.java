@@ -18,6 +18,7 @@ public abstract class Transaksi {
         System.out.println("Saldo Bertambah");
     }
 
+    public abstract void penarikan();
     public void withdraw() {
         System.out.println("Saldo Berkurang");
     }

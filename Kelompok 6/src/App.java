@@ -154,6 +154,7 @@ public class App {
                                                                                 "9.900.000",
                                                                                 "DB1001");
                                                                 System.out.println(penarikanJohn);
+                                                                System.out.println("Saldo Berkurang");
                                                                 break;
                                                         case "Michael":
                                                                 Penarikan penarikanMichael;
@@ -162,6 +163,7 @@ public class App {
                                                                                 "700.000",
                                                                                 "DB1002");
                                                                 System.out.println(penarikanMichael);
+                                                                System.out.println("Saldo Berkurang");
                                                                 break;
                                                         case "Danil":
                                                                 Penarikan penarikanDanil;
@@ -170,6 +172,7 @@ public class App {
                                                                                 "1.800.000",
                                                                                 "DB1003");
                                                                 System.out.println(penarikanDanil);
+                                                                System.out.println("Saldo Berkurang");
                                                                 break;
 
                                                         case "exit":
@@ -202,6 +205,7 @@ public class App {
                                                                                 "10.100.000",
                                                                                 "CR1001");
                                                                 System.out.println(setoranJohn);
+                                                                System.out.println("Saldo Bertambah");
                                                                 break;
                                                 
                                                         case "Michael":
@@ -211,6 +215,7 @@ public class App {
                                                                                 "1.300.000",
                                                                                 "CR1002");
                                                                 System.out.println(setoranMichael);
+                                                                System.out.println("Saldo Bertambah");
                                                                 break;
                                                         
                                                         case "Danil":
@@ -220,6 +225,7 @@ public class App {
                                                                                 "2.200.000",
                                                                                 "CR1003");
                                                                 System.out.println(setoranDanil);
+                                                                System.out.println("Saldo Bertambah");
                                                                 break;
 
                                                         case "exit":
