@@ -229,7 +229,7 @@ public class App {
                                                                 break;
 
                                                         case "exit":
-                                                                state2 = false;
+                                                                state3 = false;
                                                                 break;
 
                                                         default:
@@ -279,7 +279,7 @@ public class App {
                                                                 break;
 
                                                         case "exit":
-                                                                state2 = false;
+                                                                state4 = false;
                                                                 break;
 
                                                         default:
@@ -336,7 +336,7 @@ public class App {
                                                                 break;
 
                                                         case "exit":
-                                                                state2 = false;
+                                                                state5 = false;
                                                                 break;
 
                                                         default:
@@ -384,7 +384,7 @@ public class App {
                                                                 System.out.println(Danil);
                                                                 break;
                                                         case "exit":
-                                                                state2 = false;
+                                                                state6 = false;
                                                                 break;
 
                                                         default:
