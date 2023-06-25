@@ -12,17 +12,6 @@ public abstract class Transaksi {
         this.IdTransaksi = IdTransaksi;
     }
 
-    public abstract void setoran();
-
-    public void deposit() {
-        System.out.println("Saldo Bertambah");
-    }
-
-    public abstract void penarikan();
-    public void withdraw() {
-        System.out.println("Saldo Berkurang");
-    }
-
     public String getNominal() {
         return this.Nominal;
     }
