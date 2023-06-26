@@ -6,16 +6,9 @@ public class Setoran extends Transaksi {
 
     }
 
-    @Override
-    public void setoran() {
+    public static void setoran() {
         System.out.println("Saldo Bertambah");
 
-    }
-
-    @Override
-    public void penarikan() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'penarikan'");
     }
 
 }
