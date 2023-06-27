@@ -1,135 +1,231 @@
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.Scanner;
 import model.Penarikan;
 import model.Setoran;
 
-import java.util.Date;
-import java.util.InputMismatchException;
+import java.util.*;
 
-    public class tes {
-    static Scanner input = new Scanner(System.in);
-    public static String getTimeStamp() {
-        Date date = new Date();
-        String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
-        return timeStamp;
-    }
+public class tes {
+    private static List<Saldo> daftarSaldo = new ArrayList<>();
+    private static List<Penarikan> daftarPenarikan = new ArrayList<>();
+    private static List<Setoran> daftarSetoran = new ArrayList<>();
+    private static List<Pinjaman> daftarPinjaman = new ArrayList<>();
 
-// public static void main(String[] args) throws Exception {
-//     Transaksi[] Transaksi = { new Setoran(null, null, null) };
-//       for (Transaksi Transaksi2 : Transaksi) {
-//       Transaksi2.deposit();
-//       }
-//       Setoran deposit = new Setoran(null, null, null);
-//       deposit.getUpdateSaldo();
-//       deposit.setoran();
-//       Transaksi[2].deposit();
-      
-//       Penarikan penarikan = new Penarikan(null, null, null);
-      
-    
-public static void main(String[] args) throws Exception {
-    boolean end = false;
-    while (!end) {
-        try {
+    public static void main(String[] args) {
+        init();
+        boolean end = true;
+        while (end) {
             System.out.println("\nMenu Utama:");
             System.out.println("1. Cek Saldo");
             System.out.println("2. Penarikan");
             System.out.println("3. Setoran");
             System.out.println("4. Pinjaman");
-            System.out.println("5. Histori Transaksi");
+            System.out.println("5. Histori Transaksi"); 
             System.out.println("6. Info Nasabah");
+            System.out.println("7. Keluar");
 
-            System.out.println("\nMasukkan pilihan: ");
+            System.out.print("\nMasukkan pilihan: ");
+            Scanner input = new Scanner(System.in);
             int selectedMenu = input.nextInt();
 
             switch (selectedMenu) {
                 case 1:
-                    System.out.println();
-                    System.out.println("Saldo :");
-                    Saldo saldoJohn = new Saldo("1001", "10.000.000", "SDO1001");
-                    System.out.println(saldoJohn);
-
-                    Saldo saldoMichael = new Saldo("1002", "1.000.000", "SDO1002");
-                    System.out.println(saldoMichael);
-
-                    Saldo saldoDanil = new Saldo("1003", "2.000.000", "SDO1003");
-                    System.out.println(saldoDanil);
+                    displaySaldo();
                     break;
-
                 case 2:
-                    System.out.println();
-                    System.out.println("Penarikan :");
-                    Penarikan penarikanJohn = new Penarikan("100.000", "9.900.000", "DB1001");
-                    System.out.println(penarikanJohn);
-
-                    Penarikan penarikanMichael = new Penarikan("300.000", "700.000", "DB1002");
-                    System.out.println(penarikanMichael);
-
-                    Penarikan penarikanDanil = new Penarikan("200.000", "1.800.000", "DB1003");
-                    System.out.println(penarikanDanil);
+                    penarikan();
                     break;
-
                 case 3:
-                    System.out.println();
-                    System.out.println("Transaksi :");
-                    Setoran setoranJohn = new Setoran("100.000", "10.100.000", "CR1001");
-                    System.out.println(setoranJohn);
-
-                    Setoran setoranMichael = new Setoran("300.000", "1.300.000", "CR1002");
-                    System.out.println(setoranMichael);
-
-                    Setoran setoranDanil = new Setoran("200.000", "2.200.000", "CR1003");
-                    System.out.println(setoranDanil);
+                    setoran();
                     break;
-
                 case 4:
-                    System.out.println();
-                    System.out.println("Pinjaman :");
-                    Pinjaman pinjamanJohn = new Pinjaman("John", "500.000.000", "PIN1001");
-                    System.out.println(pinjamanJohn);
-
-                    Pinjaman pinjamanMichael = new Pinjaman("Michael", "100.000.000", "PIN1002");
-                    System.out.println(pinjamanMichael);
-
-                    Pinjaman pinjamanDanil = new Pinjaman("Danil", "10.000.000", "PIN1003");
-                    System.out.println(pinjamanDanil);
+                    pinjaman();
                     break;
-
                 case 5:
-                    System.out.println();
-                    System.out.println("Histori Transaksi :");
-                    HistoriTransaksi historiTransaksiJohn = new HistoriTransaksi("Debit", "DB1001", "1001", "100.000",
-                            "12 Januari 2023 Jam 19:15");
-                    System.out.println(historiTransaksiJohn);
-
-                    HistoriTransaksi historiTransaksiMichael = new HistoriTransaksi("Kredit", "CR1002", "1002", "300.000",
-                            "14 Juni 2022 Jam 16:45");
-                    System.out.println(historiTransaksiMichael);
-
-                    HistoriTransaksi historiTransaksiDanil = new HistoriTransaksi("Debit", "DB1003", "1003", "200.000",
-                            "22 Februari 2023 Jam 13:00");
-                    System.out.println(historiTransaksiDanil);
+                    historiTransaksi();
                     break;
-                    
                 case 6:
-                    System.out.println();
-                    System.out.println("Nasabah :");
-                    Nasabah john = new Nasabah("John", "1234567890", "1001");
-                    System.out.println(john);
-
-                    Nasabah michael = new Nasabah("Michael", "1234567891", "1002");
-                    System.out.println(michael);
-
-                    Nasabah danil = new Nasabah("Danil", "1234567892", "1003");
-                    System.out.println(danil);
+                    infoNasabah();
+                    break;
+                case 7:
+                    end = false;
+                    System.out.println("Terima kasih dan sampai jumpa lagi!");
                     break;
                 default:
-                    System.out.println("\nInvalid Choice.");
+                    System.out.println("\nPilihan tidak valid.");
+                    break;
             }
-        } catch (InputMismatchException e) {
-            System.out.println("\nInvalid Choice.");
         }
     }
+
+    public static void init() {
+        // Inisialisasi data awal
+    }
+
+    public static void displaySaldo() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nCek Saldo :");
+        System.out.print("Nomor Rekening: ");
+        String nomorRekening = scanner.nextLine();
+
+        Saldo saldoObj = findSaldoByNomorRekening(nomorRekening);
+        if (saldoObj == null) {
+            System.out.println("Saldo tidak ditemukan.");
+        } else {
+            System.out.println(saldoObj);
+        }
+
+        System.out.print("Apakah Anda ingin kembali ke menu utama? (ya/tidak): ");
+        String goBack = scanner.nextLine();
+        if (goBack.equalsIgnoreCase("ya")) {
+            return;
+        } else if (goBack.equalsIgnoreCase("tidak")) {
+                    System.out.println("Terima kasih dan sampai jumpa lagi!");
+        System.exit(0);
+    }
+
+    scanner.close();
+}
+
+public static void penarikan() {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("\nPenarikan :");
+    System.out.print("Nomor Rekening: ");
+    String nomorRekening = scanner.nextLine();
+
+    Saldo saldoObj = findSaldoByNomorRekening(nomorRekening);
+    if (saldoObj == null) {
+        System.out.println("Saldo tidak ditemukan.");
+        return;
+    }
+
+    System.out.print("Nominal Penarikan: ");
+    String nominal = scanner.nextString();
+
+    String saldoAkhir = saldoObj.getSaldo() - nominal;
+
+    System.out.print("Kode Transaksi: ");
+    String kodeTransaksi = scanner.nextLine();
+
+    Penarikan penarikan = new Penarikan(nominal, saldoAkhir, kodeTransaksi);
+    daftarPenarikan.add(penarikan);
+
+    System.out.println(penarikan);
+    System.out.println();
+
+    scanner.close();
+}
+
+public static void setoran() {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("\nSetoran :");
+    System.out.print("Nomor Rekening: ");
+    String nomorRekening = scanner.nextLine();
+
+    Saldo saldoObj = findSaldoByNomorRekening(nomorRekening);
+    if (saldoObj == null) {
+        System.out.println("Saldo tidak ditemukan.");
+        return;
+    }
+
+    System.out.print("Nominal Setoran: ");
+    String nominal = scanner.nextLine();
+
+    String saldoAkhir = saldoObj.getSaldo() + nominal;
+
+    System.out.print("Update Saldo: ");
+    System.out.println(saldoAkhir);
+
+    System.out.print("Kode Transaksi: ");
+    String kodeTransaksi = scanner.nextLine();
+
+    Setoran setoran = new Setoran(nominal, saldoAkhir, kodeTransaksi);
+    daftarSetoran.add(setoran);
+
+    System.out.println(setoran);
+    System.out.println();
+
+    scanner.close();
+}
+
+public static void Pinjaman() {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("\nPinjaman :");
+    System.out.print("Nomor Rekening: ");
+    String nomorRekening = scanner.nextLine();
+
+    Saldo saldoObj = findSaldoByNomorRekening(nomorRekening);
+    if (saldoObj == null) {
+        System.out.println("Saldo tidak ditemukan.");
+        return;
+    }
+
+
+    System.out.print("Nasabah: ");
+    String nasbah = scanner.nextLine();
+
+    System.out.print("Nominal: ");
+    String kodeTransaksi = scanner.nextLine();
+
+    System.out.print("Kode Transaksi: ");
+    String kodeTransaksi = scanner.nextLine();
+
+    Pinjaman pinjaman = new Pinjaman(nominal, kodeTransaksi);
+    daftarPinjaman.add(pinjaman);
+
+    System.out.println(pinjaman);
+    System.out.println();
+
+    scanner.close();
+}
+
+public static void historiTransaksi() {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("\nHistori Transaksi :");
+    // Implementasi logika untuk menampilkan histori transaksi
+    System.out.println("Segera hadir...");
+
+    System.out.print("Apakah Anda ingin kembali ke menu utama? (ya/tidak): ");
+    String goBack = scanner.nextLine();
+    if (goBack.equalsIgnoreCase("ya")) {
+        return;
+    } else if (goBack.equalsIgnoreCase("tidak")) {
+        System.out.println("Terima kasih dan sampai jumpa lagi!");
+        System.exit(0);
+    }
+
+    scanner.close();
+}
+
+public static void infoNasabah() {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("\nInfo Nasabah :");
+    // Implementasi logika untuk menampilkan info nasabah
+    System.out.println("Segera hadir...");
+
+    System.out.print("Apakah Anda ingin kembali ke menu utama? (ya/tidak): ");
+    String goBack = scanner.nextLine();
+    if (goBack.equalsIgnoreCase("ya")) {
+        return;
+    } else if (goBack.equalsIgnoreCase("tidak")) {
+        System.out.println("Terima kasih dan sampai jumpa lagi!");
+        System.exit(0);
+    }
+
+    scanner.close();
+}
+
+public static Saldo findSaldoByNomorRekening(String nomorRekening) {
+    for (Saldo saldo : daftarSaldo) {
+        if (saldo.getNomorRekening().equals(nomorRekening)) {
+            return saldo;
+        }
+    }
+    return null;
 }
 }
+

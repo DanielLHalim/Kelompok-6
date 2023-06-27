@@ -1,3 +1,4 @@
+
 public class Pinjaman {
     private String Nasabah;
     private String JumlahPinjaman;

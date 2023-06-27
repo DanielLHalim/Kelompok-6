@@ -1,10 +1,9 @@
 import model.Setoran;
-import model.Penarikan;
-import java.text.SimpleDateFormat;
+import model.Penarikan; 
 import java.util.*;
-import java.util.Scanner;
 
 public class App {
+        
         /*
          * public static void main(String[] args) throws Exception {
          * Transaksi[] Transaksi = { new Setoran(null, null, null) };
@@ -20,16 +19,11 @@ public class App {
          * 
          * }
          */
-
-        static Scanner input = new Scanner(System.in);
-
-        public static String getTimeStamp() {
-                Date date = new Date();
-                String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
-                return timeStamp;
-        }
-
+        
         public static void main(String[] args) throws Exception {
+
+        
+    
 
                 // Transaksi[] Transaksi = { new Setoran(null, null, null) };
                 // for (Transaksi Transaksi2 : Transaksi) {
@@ -54,6 +48,7 @@ public class App {
                         System.out.println("6. Info Nasabah");
 
                         System.out.println("\nMasukkan pilihan: ");
+                        Scanner input = new Scanner(System.in);
                         int selectedMenu = input.nextInt();
 
                         /*
