@@ -1,24 +1,24 @@
 public class Nasabah {
    
-    private String Nama;
+    private String NomorTelepon;
     private String NomorRekening;
     private String Nik;
 
     public Nasabah() {
     }
 
-    public Nasabah(String Nama, String NomorRekening, String Nik) {
-        this.Nama = Nama;
+    public Nasabah(String NomorTelepon, String NomorRekening, String Nik) {
+        this.NomorTelepon = NomorTelepon;
         this.NomorRekening = NomorRekening;
         this.Nik = Nik;
     }
 
-    public String getNama() {
-        return this.Nama;
+    public String getNomorTelepon() {
+        return this.NomorTelepon;
     }
 
-    public void setNama(String Nama) {
-        this.Nama = Nama;
+    public void setNomorTelepon(String NomorTelepon) {
+        this.NomorTelepon = NomorTelepon;
     }
 
     public String getNomorRekening() {
@@ -43,7 +43,7 @@ public class Nasabah {
     @Override
     public String toString() {
         return "{" +
-            " Nama='" + getNama() + "'" +
+            " NomorTelepon='" + getNomorTelepon() + "'" +
             ", NomorRekening='" + getNomorRekening() + "'" +
             ", Nik='" + getNik() + "'" +
             "}";

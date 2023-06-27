@@ -3,10 +3,12 @@ import model.Penarikan;
 import java.util.*;
 
 public class tes {
-    private static List<Nasabah> nasabahList;
+    private static List<Nasabah> nasabah;
 
     public static void main(String[] args) throws Exception {
-        List<Nasabah> nasabahList = new ArrayList<>(); // ArrayList untuk menyimpan objek Nasabah
+        nasabah = new ArrayList<>(); // ArrayList untuk menyimpan objek Mahasiswa
+
+        init();
 
         boolean end = true;
         while (end) {
@@ -21,6 +23,7 @@ public class tes {
 
             System.out.println("\nMasukkan pilihan: ");
             Scanner input = new Scanner(System.in);
+            try{
             int selectedMenu = input.nextInt();
             input.nextLine(); // Membuang karakter newline setelah memasukkan nomor menu
 
@@ -180,24 +183,58 @@ public class tes {
                     System.out.println("Pilihan tidak valid!");
                     break;
             }
+            } catch (NoSuchElementException e) {
+                System.out.println("Tidak ada input yang tersedia.");
+                end = false; // Menghentikan perulangan saat tidak ada input yang tersedia
+            }
         }
     }
 
     private static void inputDataNasabah() {
         Scanner input = new Scanner(System.in);
-        String noTelp, nomorRekening, NIM;
-        System.out.print("No Telepon\t\t: ");
-        noTelp = input.nextLine();
-        System.out.print("Nomor Rekening\t: ");
-        nomorRekening = input.nextLine();
-        System.out.print("NIM\t: ");
-        NIM = input.nextLine();
-        Nasabah nasabah = new Nasabah(noTelp, nomorRekening, NIM);
-        nasabahList.add(nasabah); // Menambahkan objek Nasabah ke dalam ArrayList
-        System.out.println(nasabah);
-    }
+        String noTelepon = "", nomorRekening = "", NIK = "";
 
+        System.out.print("Nomor Telepon\t: ");
+        if (input.hasNextLine())
+            noTelepon = input.nextLine();
+
+        System.out.print("Nomor Rekening\t: ");
+        if (input.hasNextLine())
+            nomorRekening = input.nextLine();
+
+        System.out.print("NIK\t: ");
+        if (input.hasNextLine())
+            NIK = input.nextLine();
+
+        nasabah.add(new Nasabah(noTelepon, nomorRekening, NIK));
+
+        input.close();
+        System.out.println();
+    }
+    public static void cetakDataNasabah(){
+        for (Nasabah nasabah2 : nasabah) {
+            System.out.println(nasabah2);
+        }
+    }
+     public static void init(){
+        Nasabah John = new Nasabah("1234567890",
+        "1001",
+        "03081220001");
+
+        Nasabah Michael = new Nasabah("1234567891",
+        "1002",
+        "03081220002");
+
+        Nasabah Danil = new Nasabah("1234567892",
+        "1003",
+        "03081220025");
+
+        nasabah.add(John);
+        nasabah.add(Michael);
+        nasabah.add(Danil);
+     }
     private static String dateTime() {
-        return null;
+        Date date = new Date();
+        return date.toString();
     }
 }
