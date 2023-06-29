@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Date;
 
-public class App {
+public class tes3 {
     public static ArrayList<User> user = new ArrayList<User>();
     public static ArrayList<Penarikan> penarikan = new ArrayList<Penarikan>();
     public static ArrayList<Setoran> setoran = new ArrayList<Setoran>();
@@ -85,18 +85,18 @@ public static Nasabah nasabahh;
         User danilUser = new User("1001", "Danil", "Danil123");
         user.add(danilUser);
 
-        Nasabah johnNasabah = new Nasabah("John", "1001", "19","1234567890","L","081234567890","10.000.000","NAS001");
+        Nasabah johnNasabah = new Nasabah("John", "1001", "19","1234567890","L","081234567890",10000000,"NAS001");
         nasabah.add(johnNasabah);
-        Nasabah michaelNasabah = new Nasabah("Michael", "1002", "19","1234567891","L","081234567891","20.000.000","NAS002");
+        Nasabah michaelNasabah = new Nasabah("Michael", "1002", "19","1234567891","L","081234567891",20000000,"NAS002");
         nasabah.add(michaelNasabah);
-        Nasabah danilNasabah = new Nasabah("Danil", "1003", "19","1234567892","L","081234567892","500.000.000","NAS003");
+        Nasabah danilNasabah = new Nasabah("Danil", "1003", "19","1234567892","L","081234567892",500000000,"NAS003");
         nasabah.add(danilNasabah);
 
-        Pinjaman johnPinjaman = new Pinjaman("10.000.000", "PIN001",nasabah);
+        Pinjaman johnPinjaman = new Pinjaman(10000000, "PIN001",nasabah);
         pinjaman.add(johnPinjaman);
-        Pinjaman michaelPinjaman = new Pinjaman("20.000.000", "PIN002",nasabah);
+        Pinjaman michaelPinjaman = new Pinjaman(2000000, "PIN002",nasabah);
         pinjaman.add(michaelPinjaman);
-        Pinjaman danilPinjaman = new Pinjaman("1.000.000", "PIN003",nasabah);
+        Pinjaman danilPinjaman = new Pinjaman(1000000, "PIN003",nasabah);
         pinjaman.add(danilPinjaman);
     }
 
@@ -136,7 +136,6 @@ public static Nasabah nasabahh;
             System.out.println("Goodbye!");
         return true;
         }
-        
         return false;
     }
     
@@ -149,17 +148,18 @@ public static Nasabah nasabahh;
         }
     }
               
-    public static void displayNasabah() {
-    String nama = " ", nomorRekening = " ", usia = " ",NIK = " ", jenisKelamin = " ", nomorTelepon = " ", saldo="", idTransaksiNasabah="";
+    public static boolean displayNasabah() {
+    String nama = " ", nomorRekening = " ", usia = " ",NIK = " ", jenisKelamin = " ", nomorTelepon = " ", idTransaksiNasabah="";
+    int saldoAwal=0;
     int min = 1;
     int max = 100;
+    nasabahh = new Nasabah(saldoAwal);
     Scanner input = new Scanner(System.in);
 
     System.out.println("Nasabah :");
     System.out.print("Masukkan Nama: ");
     if (input.hasNextLine())
             nama = input.nextLine();
-
 
     System.out.print("Masukkan No Rekening: ");
     if (input.hasNextLine())
@@ -183,12 +183,14 @@ public static Nasabah nasabahh;
 
     System.out.print("Masukkan Saldo Awal: ");
     if (input.hasNextLine())
-            saldo = input.nextLine();
+            saldoAwal = input.nextInt();
+
 
     int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
     System.out.println("Id Transaksi: NAS"+ random_int);
-    nasabahh = new Nasabah(saldo);
-    nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,saldo,idTransaksiNasabah));
+    if (input.hasNextLine())
+    
+    nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,saldoAwal,idTransaksiNasabah));
 
         // tampil
         for (Nasabah nasabah2 : nasabah) {
@@ -202,19 +204,18 @@ public static Nasabah nasabahh;
         // System.out.println(nasabah2);
         // System.out.println();
 
-
-
         System.out.print("Do you want to go back to the main menu? (yes/no): ");
         String goBack = input.nextLine();
         if (goBack.equalsIgnoreCase("yes")) {
-            return;
-        } else if (goBack.equalsIgnoreCase("no")) {
+        return false;
+        } 
+        else if (goBack.equalsIgnoreCase("no")) {
             System.out.println("Thank you and see you again");
             System.out.println("Goodbye!");
-            System.exit(0);
+        return true;
         }
 
-        
+        return false;     
     }
     
     public static void tampilDataNasabah(){
@@ -226,39 +227,33 @@ public static Nasabah nasabahh;
 
     public static void displayTransaksi() {
         Scanner scanner = new Scanner(System.in);
-        String setoran=" " , penarikan=" ", nominal=" ", updateSaldo=" ", idTransaksi=" ",date=" ",saldoNasabah=" ";
-
+        String setoran=" " , penarikan=" ", updateSaldo=" ", idTransaksi=" ",date=" ",saldoNasabah=" ";
+        int nominal=0;
 
         System.out.println("=== Menu ===");
-        System.out.print("1. Setoran: ");
-        System.out.print("2. Penarikan: ");
+        System.out.println("1. Setoran ");
+        System.out.println("2. Penarikan ");
+        
         System.out.print("Masukkan Pilihan dari Jenis Transaksi (1/2): ");
         int jenisTransaksi = scanner.nextInt();
             scanner.nextLine();
+
         switch (jenisTransaksi) {
             case 1:
                 System.out.print("Masukkan Nominal Setoran: ");
                 if (scanner.hasNextLine())
-                nominal = scanner.nextLine();
-
-                System.out.println("Setoran berhasil!");
-                int i = Integer.parseInt(nasabahh.getSaldo());
-                int ii = Integer.parseInt(nominal);
-                int total = i + ii;
+                nominal = scanner.nextInt();
+                int total= nasabahh.getSaldo()+nominal;
                 System.out.print("Saldo: "+total);
+                System.out.println("Setoran berhasil!");
+
+                
 
                 break;
 
             case 2:
                 System.out.print("Masukkan Nominal Penarikan: ");
-                if (scanner.hasNextLine())
-                nominal = scanner.nextLine();
-            
                 System.out.println("Penarikan berhasil!");
-                int i = Integer.parseInt(nasabahh.getSaldo());
-                int ii = Integer.parseInt(nominal);
-                int total2 = i - ii;
-                System.out.print("Saldo: "+total2);
 
                 break;
 
@@ -266,7 +261,7 @@ public static Nasabah nasabahh;
                 System.out.println("Invalid choice.");
         }
 
-        System.out.println("Do you want to go back to the main menu? (yes/no): ");
+        System.out.print("Do you want to go back to the main menu? (yes/no): ");
         String goBack = scanner.nextLine();
         if (goBack.equalsIgnoreCase("yes")) {
             return;
@@ -282,15 +277,11 @@ public static Nasabah nasabahh;
         int min = 1;
         int max = 100;
         Scanner input = new Scanner(System.in);
-        String jumlahPinjaman = " ", idTransaksi = " ", nomorRekening=" " ;
-
+        String idTransaksi = " ";
+        int jumlahPinjaman = 0;
         System.out.print("Masukkan Nominal Pinjaman\t:");
         if (input.hasNextLine())
-            jumlahPinjaman = input.nextLine();
-
-        System.out.print("Masukkan Nominal Pinjaman\t:");
-        if (input.hasNextLine())
-            jumlahPinjaman = input.nextLine();
+            jumlahPinjaman = input.nextInt();
 
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
         System.out.println("Id Transaksi: PIN"+ random_int);
@@ -318,7 +309,6 @@ public static Nasabah nasabahh;
             System.out.println("Goodbye!");
         return true;
         }
-        
         return false;     
     }
 

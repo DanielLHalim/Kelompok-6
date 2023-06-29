@@ -1,59 +1,46 @@
 public class User {
-    public String nama;
-    public String usia;
-    public String NIK;
-    public String jenisKelamin;
-    public String nomorTelepon;
+    public String nomorRekening;
+    public String username;
+    public String password;
+    
 
     public User() {
     }
-    public User(String nama, String usia, String NIK, String jenisKelamin, String nomorTelepon) {
-    this.nama = nama;
-    this.usia = usia;
-    this.NIK = NIK;
-    this.jenisKelamin = jenisKelamin;
-    this.nomorTelepon = nomorTelepon;  
+    public User(String nomorRekening, String username, String password) {
+    this.nomorRekening = nomorRekening;
+    this.username = username;
+    this.password = password;
+      
   }
-  public void setNama(String nama) {
-      this.nama = nama;
+  public void setnomorRekening(String nomorRekening) {
+      this.nomorRekening = nomorRekening;
   }
-  public String getNama() {
-      return nama;
+  public String getnomorRekening() {
+      return nomorRekening;
   }
-  public void setUsia(String usia) {
-      this.usia = usia;
+  public void setusername(String username) {
+      this.username = username;
   }
-  public String getUsia() {
-      return usia;
+  public String getusername() {
+      return username;
   }
-  public void setJenisKelamin(String jenisKelamin) {
-      this.jenisKelamin = jenisKelamin;
+  public void setpassword(String password) {
+      this.password = password;
   }
-  public String getJenisKelamin() {
-      return jenisKelamin;
+  public String getpassword() {
+      return password;
   }
-  public void setNIK(String nIK) {
-      NIK = nIK;
-  }
-  public String getNIK() {
-      return NIK;
-  }
-  public void setNomorTelepon(String nomorTelepon) {
-      this.nomorTelepon = nomorTelepon;
-  }
-  public String getNomorTelepon() {
-      return nomorTelepon;
-  }
+
 
     @Override
     public String toString() {
         return "{" +
-            " nama='" + getNama() + "'" +
-            ", usia='" + getUsia() + "'" +
-            ", NIK='" + getNIK() + "'" +
-            ", jenisKelamin='" + getJenisKelamin() + "'" +
-            ", nomorTelepon='" + getNomorTelepon() + "'" +
+            " nomorRekening='" + getnomorRekening() + "'" +
+            ", username='" + getusername() + "'" +
+            ", password='" + getpassword() + "'" +
             "}";
+    }
+    public static void add(User user) {
     }
 
 

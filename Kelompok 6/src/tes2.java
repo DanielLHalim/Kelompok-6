@@ -5,14 +5,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Date;
 
-public class App {
+public class tes2 {
     public static ArrayList<User> user = new ArrayList<User>();
     public static ArrayList<Penarikan> penarikan = new ArrayList<Penarikan>();
     public static ArrayList<Setoran> setoran = new ArrayList<Setoran>();
     public static ArrayList<Pinjaman> pinjaman = new ArrayList<Pinjaman>();
     public static ArrayList<Nasabah> nasabah = new ArrayList<Nasabah>();
     
-public static Nasabah nasabahh;
 
     public static void main(String[] args) throws Exception {
         boolean exit = false;
@@ -136,7 +135,7 @@ public static Nasabah nasabahh;
             System.out.println("Goodbye!");
         return true;
         }
-        
+        input.close();
         return false;
     }
     
@@ -187,7 +186,7 @@ public static Nasabah nasabahh;
 
     int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
     System.out.println("Id Transaksi: NAS"+ random_int);
-    nasabahh = new Nasabah(saldo);
+
     nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,saldo,idTransaksiNasabah));
 
         // tampil
@@ -214,7 +213,7 @@ public static Nasabah nasabahh;
             System.exit(0);
         }
 
-        
+        input.close();
     }
     
     public static void tampilDataNasabah(){
@@ -228,13 +227,18 @@ public static Nasabah nasabahh;
         Scanner scanner = new Scanner(System.in);
         String setoran=" " , penarikan=" ", nominal=" ", updateSaldo=" ", idTransaksi=" ",date=" ",saldoNasabah=" ";
 
-
         System.out.println("=== Menu ===");
         System.out.print("1. Setoran: ");
+        if (scanner.hasNextLine())
+            setoran = scanner.nextLine();
         System.out.print("2. Penarikan: ");
+        if (scanner.hasNextLine())
+            penarikan = scanner.nextLine();
+        
         System.out.print("Masukkan Pilihan dari Jenis Transaksi (1/2): ");
         int jenisTransaksi = scanner.nextInt();
             scanner.nextLine();
+
         switch (jenisTransaksi) {
             case 1:
                 System.out.print("Masukkan Nominal Setoran: ");
@@ -242,23 +246,16 @@ public static Nasabah nasabahh;
                 nominal = scanner.nextLine();
 
                 System.out.println("Setoran berhasil!");
-                int i = Integer.parseInt(nasabahh.getSaldo());
-                int ii = Integer.parseInt(nominal);
-                int total = i + ii;
-                System.out.print("Saldo: "+total);
+
+                // System.out.print("Saldo: "+getSaldo + nominal);
+                
+                // saldo = scanner.nextLine();
 
                 break;
 
             case 2:
                 System.out.print("Masukkan Nominal Penarikan: ");
-                if (scanner.hasNextLine())
-                nominal = scanner.nextLine();
-            
                 System.out.println("Penarikan berhasil!");
-                int i = Integer.parseInt(nasabahh.getSaldo());
-                int ii = Integer.parseInt(nominal);
-                int total2 = i - ii;
-                System.out.print("Saldo: "+total2);
 
                 break;
 
@@ -266,7 +263,7 @@ public static Nasabah nasabahh;
                 System.out.println("Invalid choice.");
         }
 
-        System.out.println("Do you want to go back to the main menu? (yes/no): ");
+        System.out.print("Do you want to go back to the main menu? (yes/no): ");
         String goBack = scanner.nextLine();
         if (goBack.equalsIgnoreCase("yes")) {
             return;
@@ -318,7 +315,7 @@ public static Nasabah nasabahh;
             System.out.println("Goodbye!");
         return true;
         }
-        
+        input.close();
         return false;     
     }
 
