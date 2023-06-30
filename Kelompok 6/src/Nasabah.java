@@ -7,6 +7,7 @@ public class Nasabah {
     public String nomorTelepon;
     public String saldo;
     public String idTransaksi;
+    
 
     public Nasabah (String saldo){
         this.saldo = saldo;

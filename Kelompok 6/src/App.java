@@ -110,7 +110,6 @@ public class App {
         scanner.close();
     }
 
-    
     public static void init() {
         // Inisialisasi data awal
         System.out.println("Initializing...");
@@ -231,8 +230,8 @@ public class App {
     int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
     System.out.println("Id Transaksi: NAS"+ random_int);
     nasabahh = new Nasabah(saldo);
-    nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,saldo,idTransaksiNasabah));
-    System.out.println(nasabah.get(0));
+    nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,nasabahh.getSaldo(),idTransaksiNasabah));
+    System.out.println(nasabah.get(user.size() - 1));
 
         // tampil
         for (Nasabah nasabah2 : nasabah) {
@@ -368,7 +367,7 @@ public class App {
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
         System.out.println("Id Transaksi: PIN"+ random_int);
 
-        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi, nasabah));
+        pinjaman.add(new Pinjaman(nomorRekening, jumlahPinjaman, nasabah));
         System.out.println(pinjaman.get(0));
 
         // tampil
