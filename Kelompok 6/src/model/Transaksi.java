@@ -2,15 +2,15 @@ package model;
 public abstract class Transaksi {
 
     public String Nominal;
-    public String UpdateSaldo;
+    public int UpdateSaldo;
     public String IdTransaksi;
     public String Date;
 
-     public Transaksi(String Nominal, String UpdateSaldo, String IdTransaksi, String Date) {
+     public Transaksi(String Nominal, int UpdateSaldo, String IdTransaksi, String date2) {
         this.Nominal = Nominal;
         this.UpdateSaldo = UpdateSaldo;
         this.IdTransaksi = IdTransaksi;
-        this.Date = Date;
+        this.Date = date2;
     }
 
     
@@ -23,11 +23,11 @@ public abstract class Transaksi {
         this.Nominal = Nominal;
     }
 
-    public String getUpdateSaldo() {
+    public int getUpdateSaldo() {
         return this.UpdateSaldo;
     }
 
-    public void setUpdateSaldo(String UpdateSaldo) {
+    public void setUpdateSaldo(int UpdateSaldo) {
         this.UpdateSaldo = UpdateSaldo;
     }
 
@@ -49,10 +49,10 @@ public abstract class Transaksi {
     @Override
     public String toString() {
         return "{" +
-            " Nominal='" + getNominal() + "'" +
-            ", UpdateSaldo='" + getUpdateSaldo() + "'" +
-            ", IdTransaksi='" + getIdTransaksi() + "'" +
-            ", Date='" + getDate() + "'" +
+            " " + getNominal() + "'" +
+            " " + getUpdateSaldo() + "'" +
+            " " + getIdTransaksi() + "'" +
+            " " + getDate() + "'" +
             "}";
     }
    

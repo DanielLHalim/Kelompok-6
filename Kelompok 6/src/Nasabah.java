@@ -78,14 +78,14 @@ public class Nasabah {
     @Override
     public String toString() {
         return "{" +
-            " nama='" + getNama() + "'" +
-            ", nomorRekening='" + getNomorRekening() + "'" +
-            ", usia='" + getUsia() + "'" +
-            ", NIK='" + getNIK() + "'" +
-            ", jenisKelamin='" + getJenisKelamin() + "'" +
-            ", nomorTelepon='" + getNomorTelepon() + "'" +
-            ", saldo='" + getSaldo() + "'" +
-            ", idTransaksi='" + getIdTransaksi() + "'" +
+            " " + getNama() + "'" +
+            " " + getNomorRekening() + "'" +
+            " " + getUsia() + "'" +
+            " " + getNIK() + "'" +
+            " " + getJenisKelamin() + "'" +
+            " " + getNomorTelepon() + "'" +
+            " " + getSaldo() + "'" +
+            " " + getIdTransaksi() + "'" +
             "}";
     }
     

@@ -35,12 +35,15 @@ public class User {
     @Override
     public String toString() {
         return "{" +
-            " nomorRekening='" + getnomorRekening() + "'" +
-            ", username='" + getusername() + "'" +
-            ", password='" + getpassword() + "'" +
+            " " + getnomorRekening() + "'" +
+            " " + getusername() + "'" +
+            " " + getpassword() + "'" +
             "}";
     }
     public static void add(User user) {
+    }
+    public Object getNomorRekening() {
+        return null;
     }
 
 

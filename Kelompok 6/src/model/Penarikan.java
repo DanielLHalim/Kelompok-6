@@ -2,13 +2,8 @@ package model;
 
 public class Penarikan extends Transaksi {
 
-    public Penarikan(String Nominal, String UpdateSaldo, String IdTransaksi, String Date, String Saldo) {
-        super(Nominal, UpdateSaldo, IdTransaksi, Date);
-    }
-
-    public void saldo(){
-        System.out.println("Zombie Jalan!!!");
-
+    public Penarikan(String Nominal, int UpdateSaldo, String IdTransaksi, String date) {
+        super(Nominal, UpdateSaldo, IdTransaksi, date);
     }
 
     public static void penarikan() {
