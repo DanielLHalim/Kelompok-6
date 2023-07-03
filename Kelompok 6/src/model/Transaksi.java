@@ -1,59 +1,69 @@
 package model;
+import java.util.Date;
+
 public abstract class Transaksi {
+    private String nomorRekening;
+    private int nominal;
+    private int updateSaldo;
+    private String idTransaksi;
+    private Date tanggal;
 
-    public String Nominal;
-    public int UpdateSaldo;
-    public String IdTransaksi;
-    public String Date;
-
-     public Transaksi(String Nominal, int UpdateSaldo, String IdTransaksi, String date2) {
-        this.Nominal = Nominal;
-        this.UpdateSaldo = UpdateSaldo;
-        this.IdTransaksi = IdTransaksi;
-        this.Date = date2;
+    public Transaksi(String nomorRekening, int nominal, int updateSaldo, String idTransaksi, Date tanggal) {
+        this.nomorRekening = nomorRekening;
+        this.nominal = nominal;
+        this.updateSaldo = updateSaldo;
+        this.idTransaksi = idTransaksi;
+        this.tanggal = tanggal;
     }
 
-    
-
-    public String getNominal() {
-        return this.Nominal;
+    public void setNomorRekening(String nomorRekening) {
+        this.nomorRekening = nomorRekening;
     }
 
-    public void setNominal(String Nominal) {
-        this.Nominal = Nominal;
+    public String getNomorRekening() {
+        return nomorRekening;
+    }
+
+    public int getNominal() {
+        return nominal;
+    }
+
+    public void setNominal(int nominal) {
+        this.nominal = nominal;
     }
 
     public int getUpdateSaldo() {
-        return this.UpdateSaldo;
+        return updateSaldo;
     }
 
-    public void setUpdateSaldo(int UpdateSaldo) {
-        this.UpdateSaldo = UpdateSaldo;
+    public void setUpdateSaldo(int updateSaldo) {
+        this.updateSaldo = updateSaldo;
     }
 
     public void setIdTransaksi(String idTransaksi) {
-        IdTransaksi = idTransaksi;
+        this.idTransaksi = idTransaksi;
     }
 
     public String getIdTransaksi() {
-        return IdTransaksi;
-    }
-    public void setDate(String date) {
-        Date = date;
-    }
-    public String getDate() {
-        return Date;
+        return idTransaksi;
     }
 
+    public void setTanggal(Date tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public Date getTanggal() {
+        return tanggal;
+    }
 
     @Override
     public String toString() {
         return "{" +
-            " " + getNominal() + "'" +
-            " " + getUpdateSaldo() + "'" +
-            " " + getIdTransaksi() + "'" +
-            " " + getDate() + "'" +
-            "}";
+                " nomorRekening='" + getNomorRekening() + "'" +
+                ", nominal='" + getNominal() + "'" +
+                ", updateSaldo='" + getUpdateSaldo() + "'" +
+                ", idTransaksi='" + getIdTransaksi() + "'" +
+                ", tanggal='" + getTanggal() + "'" +
+                "}";
     }
-   
 }
