@@ -144,11 +144,11 @@ public class App {
         Penarikan danilPenarikan = new Penarikan("1003",1000000,10000000, "PEN003",tanggalDate);
         penarikan.add(danilPenarikan);
 
-        Pinjaman johnPinjaman = new Pinjaman ("100.000.000", "PIN0001", nasabah);
+        Pinjaman johnPinjaman = new Pinjaman (100000000, "PIN0001", nasabah);
         pinjaman.add(johnPinjaman);
-        Pinjaman michaelPinjaman = new Pinjaman ("500.000.000", "PIN0002", nasabah);
+        Pinjaman michaelPinjaman = new Pinjaman (500000000, "PIN0002", nasabah);
         pinjaman.add(michaelPinjaman);
-        Pinjaman danilPinjaman = new Pinjaman ("50.000.000", "PIN0003", nasabah);
+        Pinjaman danilPinjaman = new Pinjaman (50000000, "PIN0003", nasabah);
         pinjaman.add(danilPinjaman);
     }
 
@@ -204,7 +204,6 @@ public class App {
     if (input.hasNextLine())
             nama = input.nextLine();
 
-
     System.out.print("Masukkan No Rekening: ");
     if (input.hasNextLine())
             nomorRekening = input.nextLine();
@@ -234,11 +233,6 @@ public class App {
     String idTransaksi = "NAS"+random_int;
     nasabahh = new Nasabah(saldo);
     nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,nasabahh.getSaldo(),idTransaksi));
-
-    nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,saldo,idTransaksiNasabah));
-    System.out.println(nasabah.get(0));
-    nasabah.add(new Nasabah(nama, nomorRekening, usia, NIK, jenisKelamin,nomorTelepon,nasabahh.getSaldo(),idTransaksiNasabah));
-
     System.out.println(nasabah.get(user.size() - 1));
 
         // tampil
@@ -268,7 +262,7 @@ public class App {
     public static void displayTransaksi() {
         Scanner scanner = new Scanner(System.in);
         String idTransaksi = " ", nomorRekening=" ";
-        int UpdateSaldo=0, UpdateSaldo2=0, nominal=0;
+        int updateSaldo=0, nominal=0;
         Date tanggalDate = new Date();
 
         System.out.println("=== Menu ===");
@@ -291,17 +285,17 @@ public class App {
                 System.out.print("Masukkan Nominal Setoran: ");
                 if (scanner.hasNextLine())
                     nominal = scanner.nextInt();
-
                 Setoran.setoran();
+
                 int i = Integer.parseInt(nasabahh.getSaldo());
                 int ii = (nominal);
-                int updateSaldo = i + ii;
-                System.out.print("Saldo: " + updateSaldo);             
+                int updateSaldo1 = i + ii;
+                System.out.print("Saldo: " + updateSaldo1);             
                 System.out.println();
 
                 int random_int1 = (int) Math.floor(Math.random() * (max1 - min1 + 1) + min1);
-                String idTransaksi1 = "NAS" + random_int1;
-                System.out.println("Id Transaksi: " + idTransaksi);
+                String idTransaksi1 = "SET" + random_int1;
+                System.out.println("Id Transaksi: " + idTransaksi1);
 
                 Date tanggalDate1 = new Date();
                 SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -329,8 +323,8 @@ public class App {
                 System.out.print("Masukkan Nominal Penarikan: ");
                 if (scanner.hasNextLine())
                     nominal = scanner.nextInt();
-
                 Penarikan.penarikan();
+
                 int i2 = Integer.parseInt(nasabahh.getSaldo());
                 int ii2 = (nominal);
                 int updateSaldo2 = i2 - ii2;
@@ -338,7 +332,7 @@ public class App {
                 updateSaldo2 = scanner.nextInt();
 
                 int random_int2 = (int) Math.floor(Math.random() * (max2 - min2 + 1) + min2);
-                String idTransaksi2 = "NAS" + random_int2;
+                String idTransaksi2 = "PEN" + random_int2;
                 System.out.println("Id Transaksi: " + idTransaksi2);     
 
                 Date tanggalDate2 = new Date();
@@ -360,7 +354,6 @@ public class App {
             default:
                 System.out.println("Invalid choice.");
         }
-
         System.out.print("Do you want to go back to the main menu? (yes/no): ");
         String goBack = scanner.nextLine();
         if (goBack.equalsIgnoreCase("yes")) {
@@ -370,28 +363,31 @@ public class App {
             System.out.println("Goodbye!");
             System.exit(0);
         }
-        inputDataUser();
+        
     }
 
     public static boolean displayPinjaman(){
         int min = 1;
         int max = 100;
         Scanner input = new Scanner(System.in);
-        String jumlahPinjaman = " ", idTransaksi = " ", nomorRekening=" " ;
+        String idTransaksi = " ";
+        long jumlahPinjaman = 0;
+        ArrayList<Nasabah> nasabahList = new ArrayList<>();
 
-        System.out.print("Masukkan Nomor Rekening\t:");
-        if (input.hasNextLine())
-            nomorRekening = input.nextLine();
+        System.out.print("Masukkan Nomor Rekening: ");
+        if (input.hasNextLine()) {
+            String nasabah = input.nextLine();
+            nasabahList.add(new Nasabah(nasabah));
+        }
         
         System.out.print("Masukkan Nominal Pinjaman\t:");
         if (input.hasNextLine())
-            jumlahPinjaman = input.nextLine();
+            jumlahPinjaman = input.nextLong();
 
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
         System.out.println("Id Transaksi: PIN"+ random_int);
 
         pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi, nasabah));
-        pinjaman.add(new Pinjaman(nomorRekening, jumlahPinjaman, nasabah));
         System.out.println(pinjaman.get(0));
 
         // tampil
@@ -427,7 +423,7 @@ public class App {
     }
 
     public static void tampilDataNasabah(){
-        System.out.println("Nama \t Nomor Rekening \t Usia NIK Jenis Kelamin Nomor Telepon  Id Transaksi");
+        System.out.println("Nama \t Nomor Rekening \t Usia \t NIK \t Jenis Kelamin \t Nomor Telepon \t Id Transaksi");
         for (Nasabah nasabah2 : nasabah) {
             System.out.println(nasabah2);
         }
@@ -450,7 +446,7 @@ public class App {
 
     public static void tampilDataPinjaman() {
         for (Pinjaman pinjaman2 : pinjaman) {
-            System.out.println("Norek \t Username \t Password");
+            System.out.println("Nomor rekening \t Jumlah Pinjaman \t Id Transaksi");
             System.out.println(pinjaman2);
         }
     }

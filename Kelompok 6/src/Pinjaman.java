@@ -1,37 +1,37 @@
 import java.util.ArrayList;
 
 public class Pinjaman {
-    private String JumlahPinjaman;
+    private long JumlahPinjaman;
     private String IdTransaksi;
+    private ArrayList<Nasabah> nasabahList;
 
-
-    public Pinjaman( String JumlahPinjaman, String IdTransaksi, ArrayList<Nasabah> nasabah) {
-        this.JumlahPinjaman = JumlahPinjaman;
+    public Pinjaman(long jumlahPinjaman, String IdTransaksi, ArrayList<Nasabah> nasabah) {
+        this.JumlahPinjaman = jumlahPinjaman;
         this.IdTransaksi = IdTransaksi;
+        this.nasabahList = nasabahList;
     }
 
-    public String getJumlahPinjaman() {
+    public long getJumlahPinjaman() {
         return this.JumlahPinjaman;
     }
 
-    public void setJumlahPinjaman(String JumlahPinjaman) {
+    public void setJumlahPinjaman(long JumlahPinjaman) {
         this.JumlahPinjaman = JumlahPinjaman;
     }
-    public void setIdTransaksi(String idTransaksi) {
-        IdTransaksi = idTransaksi;
-    }
+
     public String getIdTransaksi() {
         return IdTransaksi;
     }
 
+    public void setIdTransaksi(String idTransaksi) {
+        IdTransaksi = idTransaksi;
+    }
 
     @Override
     public String toString() {
         return "{" +
-            ", JumlahPinjaman='" + getJumlahPinjaman() + "'" +
+            "JumlahPinjaman='" + getJumlahPinjaman() + "'" +
             ", IdTransaksi='" + getIdTransaksi() + "'" +
             "}";
     }
-    
-
 }
