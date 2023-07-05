@@ -20,17 +20,17 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         while (!exit) {
-            System.out.println("=== Menu ===");
+            System.out.println("====== Menu ======");
             // Menampilkan pilihan menu
-            System.out.println("1. User");
-            System.out.println("2. Nasabah");
-            System.out.println("3. Transaksi");
-            System.out.println("4. Pinjaman");
-            System.out.println("5. Tampilkan Data User");
-            System.out.println("6. Tampilkan Data Nasabah");
-            System.out.println("7. Tampilkan Data Setoran");
-            System.out.println("8. Tampilkan Data Penarikan");
-            System.out.println("9. Tampilkan Data Pinjaman");
+            System.out.println("1.  User");
+            System.out.println("2.  Nasabah");
+            System.out.println("3.  Transaksi");
+            System.out.println("4.  Pinjaman");
+            System.out.println("5.  Tampilkan Data User");
+            System.out.println("6.  Tampilkan Data Nasabah");
+            System.out.println("7.  Tampilkan Data Setoran");
+            System.out.println("8.  Tampilkan Data Penarikan");
+            System.out.println("9.  Tampilkan Data Pinjaman");
             System.out.println("10. Remove User");
             System.out.println("11. Remove Nasabah");
             System.out.println("12. Remove Setoran");
@@ -166,6 +166,7 @@ public class App {
         if (input.hasNextLine())
             password = input.nextLine();
 
+        System.out.println("================================================================");
             user.add(new User(nomorRekening, username, password));
             System.out.println(user.get(0));
 
@@ -200,33 +201,35 @@ public class App {
     Scanner input = new Scanner(System.in);
 
     System.out.println("Nasabah :");
-    System.out.print("Masukkan Nama: ");
+    System.out.print("Masukkan Nama\t\t\t: ");
     if (input.hasNextLine())
             nama = input.nextLine();
 
-    System.out.print("Masukkan No Rekening: ");
+    System.out.print("Masukkan No Rekening\t\t: ");
     if (input.hasNextLine())
             nomorRekening = input.nextLine();
 
-    System.out.print("Masukkan Usia: ");
+    System.out.print("Masukkan Usia\t\t\t: ");
     if (input.hasNextLine())
             usia = input.nextLine();
 
-    System.out.print("Masukkan NIK: ");
+    System.out.print("Masukkan NIK\t\t\t: ");
     if (input.hasNextLine())
             NIK = input.nextLine();
 
-    System.out.print("Masukkan Jenis Kelamin (L/P): ");
+    System.out.print("Masukkan Jenis Kelamin (L/P)\t: ");
     if (input.hasNextLine())
             jenisKelamin = input.nextLine();
 
-    System.out.print("Masukkan No Telepon: ");
+    System.out.print("Masukkan No Telepon\t\t: ");
     if (input.hasNextLine())
             nomorTelepon = input.nextLine();
 
-    System.out.print("Masukkan Saldo Awal: ");
+    System.out.print("Masukkan Saldo Awal\t\t: ");
     if (input.hasNextLine())
             saldo = input.nextLine();
+    
+    System.out.println("================================================================");
 
     int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
     System.out.println("Id Transaksi: NAS"+ random_int);
@@ -265,7 +268,7 @@ public class App {
         int updateSaldo=0, nominal=0;
         Date tanggalDate = new Date();
 
-        System.out.println("=== Menu ===");
+        System.out.println("====== Menu ======");
         System.out.print("1. Setoran: ");
         System.out.println();
         System.out.print("2. Penarikan: ");
@@ -278,14 +281,16 @@ public class App {
             int min1 = 1;
             int max1 = 100;
 
-                System.out.print("Masukkan No Rekening Anda: ");
+                System.out.print("Masukkan No Rekening Anda\t: ");
                 if (scanner.hasNextLine())
                 nomorRekening = scanner.nextLine();
 
-                System.out.print("Masukkan Nominal Setoran: ");
+                System.out.print("Masukkan Nominal Setoran\t: ");
                 if (scanner.hasNextLine())
                     nominal = scanner.nextInt();
                 Setoran.setoran();
+
+                System.out.println("================================================================");
 
                 int i = Integer.parseInt(nasabahh.getSaldo());
                 int ii = (nominal);
@@ -316,14 +321,16 @@ public class App {
             int min2 = 1;
             int max2 = 100;
 
-                System.out.print("Masukkan No Rekening Anda: ");
+                System.out.print("Masukkan No Rekening Anda\t: ");
                 if (scanner.hasNextLine())
                 nomorRekening = scanner.nextLine();
 
-                System.out.print("Masukkan Nominal Penarikan: ");
+                System.out.print("Masukkan Nominal Penarikan\t: ");
                 if (scanner.hasNextLine())
                     nominal = scanner.nextInt();
                 Penarikan.penarikan();
+                
+                System.out.println("================================================================");
 
                 int i2 = Integer.parseInt(nasabahh.getSaldo());
                 int ii2 = (nominal);
@@ -374,7 +381,7 @@ public class App {
         long jumlahPinjaman = 0;
         ArrayList<Nasabah> nasabahList = new ArrayList<>();
 
-        System.out.print("Masukkan Nomor Rekening: ");
+        System.out.print("Masukkan Nomor Rekening\t\t: ");
         if (input.hasNextLine()) {
             String nasabah = input.nextLine();
             nasabahList.add(new Nasabah(nasabah));
@@ -383,6 +390,8 @@ public class App {
         System.out.print("Masukkan Nominal Pinjaman\t:");
         if (input.hasNextLine())
             jumlahPinjaman = input.nextLong();
+        
+        System.out.println("================================================================");
 
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
         System.out.println("Id Transaksi: PIN"+ random_int);
@@ -412,7 +421,7 @@ public class App {
         return true;
         }
         
-        return false;     
+    return false;     
     }
 
     public static void tampilDataUser(){
