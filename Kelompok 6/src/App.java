@@ -20,6 +20,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         while (!exit) {
+            System.out.println("");
             System.out.println("====== Menu ======");
             // Menampilkan pilihan menu
             System.out.println("1.  User");
@@ -311,10 +312,11 @@ public class App {
                 System.out.println(setoran.get(0));
 
                 // tampil
-                for (Setoran setoran2 : setoran) {
-                    System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
-                    System.out.print(setoran2);
-                }
+                // for (Setoran setoran2 : setoran) {
+                //     System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
+                //     System.out.print(setoran2);
+                // }
+                tampilDataSetoran();
                 break;
 
             case 2:
@@ -329,7 +331,7 @@ public class App {
                 if (scanner.hasNextLine())
                     nominal = scanner.nextInt();
                 Penarikan.penarikan();
-                
+
                 System.out.println("================================================================");
 
                 int i2 = Integer.parseInt(nasabahh.getSaldo());
@@ -351,10 +353,11 @@ public class App {
                 System.out.println(penarikan.get(0));
 
                 // tampil
-                for (Penarikan penarikan2 : penarikan) {
-                    System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
-                    System.out.print(penarikan2);
-                }
+                // for (Penarikan penarikan2 : penarikan) {
+                //     System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
+                //     System.out.print(penarikan2);
+                // }
+                tampilDataPenarikan();
 
                 break;
 
@@ -370,7 +373,6 @@ public class App {
             System.out.println("Goodbye!");
             System.exit(0);
         }
-        
     }
 
     public static boolean displayPinjaman(){
