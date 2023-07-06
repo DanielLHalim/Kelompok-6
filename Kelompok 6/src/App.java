@@ -364,7 +364,7 @@ public class App {
             default:
                 System.out.println("Invalid choice.");
         }
-        System.out.print("Do you want to go back to the main menu? (yes/no): ");
+        System.out.println("Do you want to go back to the main menu? (yes/no): ");
         String goBack = scanner.nextLine();
         if (goBack.equalsIgnoreCase("yes")) {
             return;
@@ -441,12 +441,11 @@ public class App {
     }
 
     public static void tampilDataSetoran(){
-        
-                    System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
-        for (Pinjaman pinjaman2 : pinjaman) {
-                    System.out.print(pinjaman2);
-                }
-    }
+        for (Setoran setoran2 : setoran) {
+            System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
+            System.out.println(setoran2);
+        }
+    }   
 
     public static void tampilDataPenarikan(){
         for (Penarikan penarikan2 : penarikan) {
