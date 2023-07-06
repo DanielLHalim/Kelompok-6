@@ -308,7 +308,7 @@ public class App {
                 String formattedDate1 = sdf1.format(tanggalDate1);
                 System.out.println("Tanggal dan Waktu: " + formattedDate1);
 
-                setoran.add(new Setoran(nomorRekening,nominal,updateSaldo,idTransaksi1, tanggalDate1));
+                setoran.add(new Setoran(nomorRekening,nominal,updateSaldo1,idTransaksi1, tanggalDate1));
                 System.out.println(setoran.get(0));
 
                 // tampil
