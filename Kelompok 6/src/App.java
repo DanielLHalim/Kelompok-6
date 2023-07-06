@@ -396,9 +396,10 @@ public class App {
         System.out.println("================================================================");
 
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
-        System.out.println("Id Transaksi: PIN"+ random_int);
+        String idTransaksi2 = "PIN" + random_int;
+        System.out.println("Id Transaksi: " + idTransaksi2);
 
-        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi, nasabah));
+        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi2, nasabah));
         System.out.println(pinjaman.get(0));
 
         // tampil
@@ -423,7 +424,7 @@ public class App {
         return true;
         }
         
-    return false;     
+        return false;     
     }
 
     public static void tampilDataUser(){
