@@ -131,18 +131,18 @@ public class App {
         Nasabah danilNasabah = new Nasabah("Danil", "1003", "19","1234567892","L","081234567892","500.000.000","NAS003");
         nasabah.add(danilNasabah);
 
-        Setoran johnSetoran = new Setoran("1001",10000000,21000000, "SET001",tanggalDate);
+        Setoran johnSetoran = new Setoran("1001",11000000,10000000,21000000, "SET001",tanggalDate);
         setoran.add(johnSetoran);
-        Setoran michaelSetoran = new Setoran("1002",20000000,31000000, "SET002",tanggalDate);
+        Setoran michaelSetoran = new Setoran("1002",11000000,20000000,31000000, "SET002",tanggalDate);
         setoran.add(michaelSetoran);
-        Setoran danilSetoran = new Setoran("1003",30000000,41000000, "SET003",tanggalDate );
+        Setoran danilSetoran = new Setoran("1003",11000000,30000000,41000000, "SET003",tanggalDate );
         setoran.add(danilSetoran);
 
-        Penarikan johnPenarikan = new Penarikan("1001",1000000,10000000, "PEN001",tanggalDate);
+        Penarikan johnPenarikan = new Penarikan("1001",11000000,1000000,10000000, "PEN001",tanggalDate);
         penarikan.add(johnPenarikan);
-        Penarikan michaelPenarikan = new Penarikan("1002",1000000,10000000, "PEN002",tanggalDate );
+        Penarikan michaelPenarikan = new Penarikan("1002",11000000,1000000,10000000, "PEN002",tanggalDate );
         penarikan.add(michaelPenarikan);
-        Penarikan danilPenarikan = new Penarikan("1003",1000000,10000000, "PEN003",tanggalDate);
+        Penarikan danilPenarikan = new Penarikan("1003",11000000,1000000,10000000, "PEN003",tanggalDate);
         penarikan.add(danilPenarikan);
 
         Pinjaman johnPinjaman = new Pinjaman (100000000, "PIN0001", nasabah);
@@ -308,14 +308,9 @@ public class App {
                 String formattedDate1 = sdf1.format(tanggalDate1);
                 System.out.println("Tanggal dan Waktu: " + formattedDate1);
 
-                setoran.add(new Setoran(nomorRekening,nominal,updateSaldo1,idTransaksi1, tanggalDate1));
+                setoran.add(new Setoran(nomorRekening,i,nominal,updateSaldo1,idTransaksi1, tanggalDate1));
                 System.out.println(setoran.get(0));
 
-                // tampil
-                // for (Setoran setoran2 : setoran) {
-                //     System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
-                //     System.out.print(setoran2);
-                // }
                 tampilDataSetoran();
                 break;
 
@@ -338,7 +333,7 @@ public class App {
                 int ii2 = (nominal);
                 int updateSaldo2 = i2 - ii2;
                 System.out.println("Saldo: " + updateSaldo2);
-                updateSaldo2 = scanner.nextInt();
+                System.out.println();;
 
                 int random_int2 = (int) Math.floor(Math.random() * (max2 - min2 + 1) + min2);
                 String idTransaksi2 = "PEN" + random_int2;
@@ -349,29 +344,15 @@ public class App {
                 String formattedDate2 = sdf2.format(tanggalDate2);
                 System.out.println("Tanggal dan Waktu: " + formattedDate2);
 
-                penarikan.add(new Penarikan(nomorRekening,nominal,updateSaldo2,idTransaksi2, tanggalDate2));
+                penarikan.add(new Penarikan(nomorRekening,i2,nominal,updateSaldo2,idTransaksi2, tanggalDate2));
                 System.out.println(penarikan.get(0));
 
-                // tampil
-                // for (Penarikan penarikan2 : penarikan) {
-                //     System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
-                //     System.out.print(penarikan2);
-                // }
                 tampilDataPenarikan();
 
                 break;
 
             default:
                 System.out.println("Invalid choice.");
-        }
-        System.out.println("Do you want to go back to the main menu? (yes/no): ");
-        String goBack = scanner.nextLine();
-        if (goBack.equalsIgnoreCase("yes")) {
-            return;
-        } else if (goBack.equalsIgnoreCase("no")) {
-            System.out.println("Thank you and see you again");
-            System.out.println("Goodbye!");
-            System.exit(0);
         }
     }
 
@@ -441,19 +422,19 @@ public class App {
         }
     }
 
-    public static void tampilDataSetoran(){
-        for (Setoran setoran2 : setoran) {
-            System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
-            System.out.println(setoran2);
-        }
-    }   
-
-    public static void tampilDataPenarikan(){
-        for (Penarikan penarikan2 : penarikan) {
-                    System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
-                    System.out.print(penarikan2);
-                }
+    public static void tampilDataSetoran() {
+    System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
+    for (Setoran setoran2 : setoran) {
+        System.out.println(setoran2.toString());
     }
+}
+
+public static void tampilDataPenarikan() {
+    System.out.println("Nomor Rekening \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
+    for (Penarikan penarikan2 : penarikan) {
+        System.out.println(penarikan2.toString());
+    }
+}
 
     public static void tampilDataPinjaman() {
         for (Pinjaman pinjaman2 : pinjaman) {

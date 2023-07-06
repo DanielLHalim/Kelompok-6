@@ -7,8 +7,9 @@ public abstract class Transaksi {
     private int updateSaldo;
     private String idTransaksi;
     private Date tanggal;
+    private long saldo;
 
-    public Transaksi(String nomorRekening, int nominal, int updateSaldo, String idTransaksi, Date tanggal) {
+    public Transaksi(String nomorRekening,long saldo, int nominal, int updateSaldo, String idTransaksi, Date tanggal) {
         this.nomorRekening = nomorRekening;
         this.nominal = nominal;
         this.updateSaldo = updateSaldo;
@@ -56,14 +57,23 @@ public abstract class Transaksi {
         return tanggal;
     }
 
+    public void setSaldo(long saldo) {
+        this.saldo = saldo;
+    }
+    public long getSaldo() {
+        return saldo;
+    }
+
     @Override
     public String toString() {
         return "{" +
-                " nomorRekening='" + getNomorRekening() + "'" +
-                ", nominal='" + getNominal() + "'" +
-                ", updateSaldo='" + getUpdateSaldo() + "'" +
-                ", idTransaksi='" + getIdTransaksi() + "'" +
-                ", tanggal='" + getTanggal() + "'" +
-                "}";
+            " nomorRekening='" + getNomorRekening() + "'" +
+            ", nominal='" + getNominal() + "'" +
+            ", updateSaldo='" + getUpdateSaldo() + "'" +
+            ", idTransaksi='" + getIdTransaksi() + "'" +
+            ", tanggal='" + getTanggal() + "'" +
+            ", saldo='" + getSaldo() + "'" +
+            "}";
     }
+    
 }

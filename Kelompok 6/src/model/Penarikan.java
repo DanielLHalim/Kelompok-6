@@ -3,8 +3,8 @@ import java.util.Date;
 
 public class Penarikan extends Transaksi {
 
-    public Penarikan(String nomorRekening, int Nominal, int UpdateSaldo, String IdTransaksi, Date Tanggal) {
-        super(nomorRekening, Nominal, UpdateSaldo, IdTransaksi, Tanggal);
+    public Penarikan(String nomorRekening,long saldo, int Nominal, int UpdateSaldo, String IdTransaksi, Date Tanggal) {
+        super(nomorRekening,saldo, Nominal, UpdateSaldo, IdTransaksi, Tanggal);
     }
 
     public static void penarikan() {
