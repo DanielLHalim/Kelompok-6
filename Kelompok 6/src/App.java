@@ -113,7 +113,6 @@ public class App {
         scanner.close();
     }
 
-
     public static void init() {
         // Inisialisasi data awal
         Date tanggalDate = new Date();
@@ -221,7 +220,7 @@ public class App {
     return false;
 }
 
-public static void displayNasabah() {
+    public static void displayNasabah() {
     String nama = " ", nomorRekening = " ", usia = " ", NIK = " ", jenisKelamin = " ", nomorTelepon = " ", saldo = "", idTransaksiNasabah = "";
     int min = 1;
     int max = 100;
@@ -341,8 +340,6 @@ public static void displayNasabah() {
         System.exit(0);
     }
 }
-
-
 
     public static void displayTransaksi() {
         Scanner scanner = new Scanner(System.in);
@@ -482,7 +479,7 @@ public static void displayNasabah() {
                 String idTransaksi1 = "SET" + random_int1;
                 System.out.println("Id Transaksi: " + idTransaksi1);
 
-        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi1, nasabahList));
+        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi1, nomorRekening));
         System.out.println(pinjaman.get(pinjaman.size() - 1));
 
         // tampil
@@ -510,24 +507,32 @@ public static void displayNasabah() {
     }
 
     public static void tampilDataSetoran(){
+        
+        System.out.println("Nomor Rekening \t Saldo \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
         for (Setoran setoran2 : setoran) {
-            System.out.println("Norek \t\t Saldo Awal \t Nominal \t Saldo Akhir \t Id Transaksi \t Tanggal dan Waktu");
-            System.out.println(setoran2);
-        }
+                    System.out.println(setoran2);
+                }
+                System.out.println("Tekan ENTER untuk lanjut");
+                Scanner scanner = new Scanner(System.in);
+   
     }
 
     public static void tampilDataPenarikan(){
+        System.out.println("Nomor Rekening \t Saldo \t Nominal \t Update Saldo \t ID Transaksi \t Tanggal dan Waktu");
         for (Penarikan penarikan2 : penarikan) {
-            System.out.println("Norek \t\t Saldo Awal \t Nominal \t Saldo Akhir \t Id Transaksi \t Tanggal dan Waktu");
-            System.out.println(penarikan2);
-        }
+                    System.out.print(penarikan2);
+                }
+                System.out.println("Tekan ENTER untuk lanjut");
+                Scanner scanner = new Scanner(System.in);
     }
 
-    public static void tampilDataPinjaman(){
+    public static void tampilDataPinjaman() {
+        System.out.println("Nomor rekening \t Jumlah Pinjaman \t Id Transaksi");
         for (Pinjaman pinjaman2 : pinjaman) {
-            System.out.println("Jumlah Pinjaman \t Id Transaksi \t Nama Nasabah \t Nomor Rekening");
-            System.out.print(pinjaman2);
-        }
+            System.out.println(pinjaman2);
+            }
+            System.out.println("Tekan ENTER untuk lanjut");
+            Scanner scanner = new Scanner(System.in);
     }
 
     public static void removeUser(int index) {

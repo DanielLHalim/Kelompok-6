@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 
 public class Pinjaman {
+    private ArrayList<Nasabah> nomorRekening;
     private long JumlahPinjaman;
     private String IdTransaksi;
-    private ArrayList<Nasabah> nasabahList;
+    
 
-    public Pinjaman(long jumlahPinjaman, String IdTransaksi, ArrayList<Nasabah> nasabah) {
+    public Pinjaman(long jumlahPinjaman, String IdTransaksi, ArrayList<Nasabah> nomorRekening) {
+        this.nomorRekening = nomorRekening;
         this.JumlahPinjaman = jumlahPinjaman;
         this.IdTransaksi = IdTransaksi;
-        this.nasabahList = nasabahList;
     }
 
     public long getJumlahPinjaman() {
