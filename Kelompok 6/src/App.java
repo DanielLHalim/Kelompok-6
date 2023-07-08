@@ -454,8 +454,8 @@ public static void displayNasabah() {
     }
 
     public static boolean displayPinjaman(){
-        int min = 1;
-        int max = 100;
+        int min1 = 1;
+        int max1 = 100;
         Scanner input = new Scanner(System.in);
         String idTransaksi = " " ,nomorRekening=" ";
         long jumlahPinjaman = 0;
@@ -478,11 +478,11 @@ public static void displayNasabah() {
 
         System.out.println("================================================================");
 
-        int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
-        String idTransaksi2 = "PIN" + random_int;
-        System.out.println("Id Transaksi: " + idTransaksi);
+        int random_int1 = (int) Math.floor(Math.random() * (max1 - min1 + 1) + min1);
+                String idTransaksi1 = "SET" + random_int1;
+                System.out.println("Id Transaksi: " + idTransaksi1);
 
-        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi, nasabahList));
+        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi1, nasabahList));
         System.out.println(pinjaman.get(pinjaman.size() - 1));
 
         // tampil
@@ -490,18 +490,7 @@ public static void displayNasabah() {
 
         System.out.println();
 
-        System.out.println("Selamat anda telah terdaftar!");
-
-        System.out.print("Do you want to go back to the main menu? (yes/no): ");
-        String goBack = input.nextLine();
-        if (goBack.equalsIgnoreCase("yes")) {
-            return false;
-
-        } else if (goBack.equalsIgnoreCase("no")) {
-            System.out.println("Thank you and see you again");
-            System.out.println("Goodbye!");
-            return true;
-        }
+        System.out.println("Selamat Pinjaman telah diajukan!");
 
         return false;
     }
