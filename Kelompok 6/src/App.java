@@ -102,7 +102,7 @@ public class App {
                     removePinjaman(0);
                     break;
 
-                case 20:
+                case 15:
                     exit = true;
                     break;
 
@@ -257,7 +257,7 @@ public static void displayNasabah() {
         usia = input.nextLine();
     try {
         if (!validateRekening(usia)) {
-            throw new IllegalArgumentException("Nomor rekening harus berupa angka.");
+            throw new IllegalArgumentException("Usia harus berupa angka.");
         }
     } catch (IllegalArgumentException e) {
         System.out.println("Invalid input: " + e.getMessage());
@@ -269,7 +269,7 @@ public static void displayNasabah() {
         NIK = input.nextLine();
     try {
         if (!validateRekening(NIK)) {
-            throw new IllegalArgumentException("Nomor rekening harus berupa angka.");
+            throw new IllegalArgumentException("NIK harus berupa angka.");
         }
     } catch (IllegalArgumentException e) {
         System.out.println("Invalid input: " + e.getMessage());
