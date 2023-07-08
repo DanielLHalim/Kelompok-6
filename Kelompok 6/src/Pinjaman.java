@@ -1,17 +1,26 @@
 import java.util.ArrayList;
 
 public class Pinjaman {
-    private ArrayList<Nasabah> nomorRekening;
+    private ArrayList<Nasabah> nasabah;
     private long JumlahPinjaman;
     private String IdTransaksi;
     
 
-    public Pinjaman(long jumlahPinjaman, String IdTransaksi, ArrayList<Nasabah> nomorRekening) {
-        this.nomorRekening = nomorRekening;
+    public Pinjaman(ArrayList<Nasabah>nasabah, long jumlahPinjaman, String IdTransaksi) {
+        this.nasabah = nasabah;
         this.JumlahPinjaman = jumlahPinjaman;
         this.IdTransaksi = IdTransaksi;
     }
+    public void addnasabah(Nasabah nasabah){
+        this.nasabah.add(nasabah);
+    }
+    public ArrayList<Nasabah> getnasabah() {
+        return this.nasabah;
+    }
 
+    public void setnasabah(ArrayList<Nasabah> nasabah) {
+        this.nasabah = nasabah;
+    }
     public long getJumlahPinjaman() {
         return this.JumlahPinjaman;
     }

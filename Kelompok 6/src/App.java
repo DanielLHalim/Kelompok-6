@@ -145,11 +145,11 @@ public class App {
         Penarikan danilPenarikan = new Penarikan("1003",11000000,1000000,10000000, "PEN003",tanggalDate);
         penarikan.add(danilPenarikan);
 
-        Pinjaman johnPinjaman = new Pinjaman (100000000, "PIN0001", nasabah);
+        Pinjaman johnPinjaman = new Pinjaman (nasabah,100000000, "PIN0001");
         pinjaman.add(johnPinjaman);
-        Pinjaman michaelPinjaman = new Pinjaman (500000000, "PIN0002", nasabah);
+        Pinjaman michaelPinjaman = new Pinjaman (nasabah, 500000000, "PIN0002");
         pinjaman.add(michaelPinjaman);
-        Pinjaman danilPinjaman = new Pinjaman (50000000, "PIN0003", nasabah);
+        Pinjaman danilPinjaman = new Pinjaman (nasabah, 50000000, "PIN0003");
         pinjaman.add(danilPinjaman);
     }
 
@@ -450,47 +450,48 @@ public class App {
         }
     }
 
-    public static boolean displayPinjaman(){
-        int min1 = 1;
-        int max1 = 100;
-        Scanner input = new Scanner(System.in);
-        String idTransaksi = " " ,nomorRekening=" ";
-        long jumlahPinjaman = 0;
+    public static boolean displayPinjaman() {
+    int min1 = 1;
+    int max1 = 100;
+    Scanner input = new Scanner(System.in);
+    String nomorRekening = "";
+    long jumlahPinjaman = 0;
 
-        System.out.print("Masukkan No Rekening Anda\t: ");
-        if (input.hasNextLine())
-            nomorRekening = input.nextLine();
-        if (!validateRekening(nomorRekening)) {
-            System.out.println("Nomor rekening harus berupa angka.");
-            return true;
-        }
+    System.out.print("Masukkan No Rekening Anda\t: ");
+    if (input.hasNextLine())
+        nomorRekening = input.nextLine();
+    if (!validateRekening(nomorRekening)) {
+        System.out.println("Nomor rekening harus berupa angka.");
+        return true;
+    }
 
-        System.out.print("Masukkan Nominal Pinjaman\t: ");
-        if (input.hasNextLine())
-            jumlahPinjaman = input.nextLong();
-        if (!validateNominal(jumlahPinjaman)) {
-            System.out.println("Nominal pinjaman harus berupa angka.");
-            return false;
-        }
-
-        System.out.println("================================================================");
-
-        int random_int1 = (int) Math.floor(Math.random() * (max1 - min1 + 1) + min1);
-                String idTransaksi1 = "PIN" + random_int1;
-                System.out.println("Id Transaksi: " + idTransaksi1);
-
-        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi1, nasabah));
-        System.out.println(pinjaman.get(pinjaman.size() - 1));
-
-        // tampil
-        tampilDataPinjaman();
-
-        System.out.println();
-
-        System.out.println("Selamat Pinjaman telah diajukan!");
-
+    System.out.print("Masukkan Nominal Pinjaman\t: ");
+    if (input.hasNextLine())
+        jumlahPinjaman = input.nextLong();
+    if (!validateNominal(jumlahPinjaman)) {
+        System.out.println("Nominal pinjaman harus berupa angka.");
         return false;
     }
+
+    System.out.println("================================================================");
+
+    int random_int1 = (int) Math.floor(Math.random() * (max1 - min1 + 1) + min1);
+    String idTransaksi1 = "PIN" + random_int1;
+    System.out.println("Id Transaksi: " + idTransaksi1);
+
+    pinjaman.add(new Pinjaman(nasabah, jumlahPinjaman, idTransaksi1));
+    System.out.println(pinjaman.get(pinjaman.size() - 1));
+
+    // tampil
+    tampilDataPinjaman();
+
+    System.out.println();
+
+    System.out.println("Selamat Pinjaman telah diajukan!");
+
+    return false;
+}
+
 
     public static void tampilDataUser(){
         for (User user2 : user) {
