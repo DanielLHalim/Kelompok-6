@@ -10,7 +10,7 @@ public class Setoran extends Transaksi {
 
     public Setoran(String nomorRekening, long saldo, long nominal, long updateSaldo1, String idTransaksi1,
             Date tanggalDate1) {
-                super(nomorRekening, 0, nominal, updateSaldo1, idTransaksi1, tanggalDate1);
+                super(nomorRekening, saldo, nominal, updateSaldo1, idTransaksi1, tanggalDate1);
     }
 
 

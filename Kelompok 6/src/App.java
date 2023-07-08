@@ -38,7 +38,7 @@ public class App {
             System.out.println("12. Remove Setoran");
             System.out.println("13. Remove Penarikan");
             System.out.println("14. Remove Pinjaman");
-            System.out.println("20. Exit");
+            System.out.println("15. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
@@ -457,17 +457,15 @@ public static void displayNasabah() {
         int min = 1;
         int max = 100;
         Scanner input = new Scanner(System.in);
-        String idTransaksi = " ";
+        String idTransaksi = " " ,nomorRekening=" ";
         long jumlahPinjaman = 0;
 
-        System.out.print("Masukkan Nomor Rekening\t\t: ");
-        if (input.hasNextLine()) {
-            String nasabah = input.nextLine();
-            nasabahList.add(new Nasabah(nasabah));
-        }
-        if (!validateRekening(nasabahList.get(0).getNomorRekening())) {
+        System.out.print("Masukkan No Rekening Anda\t: ");
+        if (input.hasNextLine())
+            nomorRekening = input.nextLine();
+        if (!validateRekening(nomorRekening)) {
             System.out.println("Nomor rekening harus berupa angka.");
-            return false;
+            return true;
         }
 
         System.out.print("Masukkan Nominal Pinjaman\t:");
@@ -482,16 +480,13 @@ public static void displayNasabah() {
 
         int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
         String idTransaksi2 = "PIN" + random_int;
-        System.out.println("Id Transaksi: " + idTransaksi2);
+        System.out.println("Id Transaksi: " + idTransaksi);
 
-        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi2, nasabahList));
+        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi, nasabahList));
         System.out.println(pinjaman.get(pinjaman.size() - 1));
 
         // tampil
-        for (Pinjaman pinjaman2 : pinjaman) {
-            System.out.println("Jumlah Pinjaman \t Id Transaksi");
-            System.out.print(pinjaman2);
-        }
+        tampilDataPinjaman();
 
         System.out.println();
 
