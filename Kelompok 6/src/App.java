@@ -465,7 +465,7 @@ public class App {
             return true;
         }
 
-        System.out.print("Masukkan Nominal Pinjaman\t:");
+        System.out.print("Masukkan Nominal Pinjaman\t: ");
         if (input.hasNextLine())
             jumlahPinjaman = input.nextLong();
         if (!validateNominal(jumlahPinjaman)) {
@@ -476,10 +476,10 @@ public class App {
         System.out.println("================================================================");
 
         int random_int1 = (int) Math.floor(Math.random() * (max1 - min1 + 1) + min1);
-                String idTransaksi1 = "SET" + random_int1;
+                String idTransaksi1 = "PIN" + random_int1;
                 System.out.println("Id Transaksi: " + idTransaksi1);
 
-        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi1, nomorRekening));
+        pinjaman.add(new Pinjaman(jumlahPinjaman, idTransaksi1, nasabah));
         System.out.println(pinjaman.get(pinjaman.size() - 1));
 
         // tampil
