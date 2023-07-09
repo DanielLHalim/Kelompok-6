@@ -1,18 +1,21 @@
-## Getting Started
+## Aplikasi Keuangan Digital (PAY-KU)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Pay-ku merupakan sebuah aplikasi keuangan digital yang  memungkinkan pengguna untuk lakukan berbagai transaksi keuangan seperti penarikan tunai, setoran tunai, memberikan pinjaman dan masih banyak lagi.
 
-## Folder Structure
+## FITUR
 
-The workspace contains two folders by default, where:
+Fitur yang terdapat dalam aplikasi ini adalah sebagai berikut:
+- Fitur Setor Tunai
+- Fitur Penarikan Tunai
+- Fitur Pinjaman
+- Fitur Nasabah
+- Fitur User
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Susunan Tim
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+-Daniel Lexandrosth Halim (03081220025) Ketua
+-Davidsen Cuaca (03081220040)
+-Jefferson Sutanto (03081220030)
+-John Michael Chenardy (03081220008)
+-Kerstyn Laigusten (03081220044)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
