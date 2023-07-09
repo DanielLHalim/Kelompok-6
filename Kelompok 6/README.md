@@ -13,9 +13,9 @@ Fitur yang terdapat dalam aplikasi ini adalah sebagai berikut:
 
 ## Susunan Tim
 
--Daniel Lexandrosth Halim (03081220025) Ketua
--Davidsen Cuaca (03081220040)
--Jefferson Sutanto (03081220030)
--John Michael Chenardy (03081220008)
--Kerstyn Laigusten (03081220044)
+- Daniel Lexandrosth Halim (03081220025) Ketua
+- Davidsen Cuaca (03081220040)
+- Jefferson Sutanto (03081220030)
+- John Michael Chenardy (03081220008)
+- Kerstyn Laigusten (03081220044)
 
